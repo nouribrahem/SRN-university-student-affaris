@@ -1,15 +1,16 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <title>Add Student</title>
+        <title>SRN-ADD</title>
         <style>
             label{
                 width:100px;
                 display:inline-block;
             }
             a { text-decoration: none; }
- 
+            ul{
+                list-style-type: none;
+            }
             
         </style>
     </head>
@@ -19,15 +20,19 @@
             <hr>
             </p> 
             <p>
-              <nav>
-                <a href="Home.html" style="float: left; font-size: x-large; color: black;">Home |</a> 
-                <a href="Login.html" style="float: right; font-size: x-large; color: #000;"> | Log out</a>
-                  <button style="border: none; background-color: rgb(255, 255, 255); font-size: x-large;">Students</button>
+                <nav>
+                <ul>
+                <li style = "display: inline;"><a href="Home.html" style=" font-size: x-large; color: black;">Home |</a></li> 
+                <li style = "display: inline;float: right;"><a href="Login.html" style=" font-size: x-large; color: #000;"> | Log out</a></li>
+                <li style = "display: inline;"><button style="border: none; background-color: rgb(255, 255, 255); font-size: x-large;">Students</button></li>
                   <div>
                     <a style="font-size: x-large;color: black;" href="ViewStudents.html">View</a>
                     <a style="font-size: x-large;color: black;" href="AddStudent.html"> Add </a>
+                    <a style="font-size: x-large;color: black;" href="UpdateStudent.html"> Update </a>
+                    <a style="font-size: x-large;color: black;" href="AssignDepartment.html"> Department </a>
                   </div>
-              </nav>
+               </ul>
+                </nav>
               <hr>
             </p>  
         <h1> Add Student</h1>
