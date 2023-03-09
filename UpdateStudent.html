@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <style>
+    h1{
+        text-align: center;
+    }
+    
+    form{
+        margin-left: 25%;
+    }
+    
+    .txtboxStyle2{
+        width: 50%;
+    }
+    .btnStyle{
+        margin-left: 80%;
+    }
+    .row {
+        display: flex;
+    }
+
+    .column {
+        flex: 50%;
+        
+        
+    }
+    
+    
+</style>
+</head>
+  
+<body>
+
+
+    <br><br><h1>Update student information</h1><br><br><br><br>
+    <form action ="Submitted_Successfully.html">
+
+        <div class="row">
+            <div class="column">
+
+                <!--First name-->
+
+                <label for="fname" >First name:</label> <br><br>
+                <input type="text" id="fname" name="fname" value="Salma" class="txtboxStyle2"><br><br><br>
+
+                <!--ID-->
+
+                <label for="ID">ID:</label> <br><br>
+                <input type="text" id="ID" name="ID" value="20210493" minlength="8" class="txtboxStyle2"><br><br><br>
+
+                <!--Email-->
+
+                <label for="email">Email:</label><br><br>
+                <input type="email" id="email" name="email" value="example@gmail.com" class="txtboxStyle2"><br><br><br>
+
+                <!--Date of birth-->
+
+                <label for="DOB">Date of birth:</label><br><br>
+                <input type="date" id="DOB" name="DOB" class="txtboxStyle2"><br><br><br>
+
+                <!--Level-->
+
+                <label for="level">Level: </label> <br><br>
+                <input type=text list=level class="txtboxStyle2">
+                <datalist id=level >
+                    <option> Freshman
+                    <option> Sophomore
+                    <option> Junior 
+                    <option> Senior
+                </datalist><br><br><br>
+
+                <!--Gender and status -->
+
+                <label for="gender">Gender: </label><br><br><br>
+
+                &emsp;&ensp;
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="gender">Male</label>&emsp;&emsp;
+
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="gender">Female</label>
+                <br><br><br>
+
+
+
+
+
+            </div>
+
+            <div class="column">
+
+                <!--Last name-->
+
+                <label for="lname">Last name:</label><br><br>
+                <input type="text" id="lname" name="lname" value="Gamal" class ="txtboxStyle2"><br><br><br>
+
+                <!--GPA -->
+
+                <label for="GPA">GPA:</label><br><br>
+                <input type="GPA" id="GPA" name="GPA" value="0" class="txtboxStyle2"><br><br><br>
+
+                <!--Phone number -->
+
+                <label for="phone_no">Mobile Number:</label><br><br>
+                <input type="tel" id="phone_no" name="phone_no" value="01XX XXX XXXX"  minlength="11"  class="txtboxStyle2"><br><br><br>
+
+                <!--Entry year -->
+
+                <label for="EY" class="txtboxMargin">Entry year:</label><br><br>
+                <input type="number" id="EY" name="EY" value="2021" class="txtboxStyle2"><br><br><br>
+
+
+                <!--Department -->
+
+                <label for="department">Department: </label><br><br>
+                <input type=text list=department class="txtboxStyle2">
+                <datalist id=department >
+                    <option> Information Systems
+                    <option> Computer Science
+                    <option> Decision Support
+                    <option> Information Technology
+                    <option> Artificial Intelligence
+
+
+                </datalist><br><br><br>
+
+                <!--Status -->
+
+                <label for="active">Status: </label><br><br><br>
+
+                &emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+                <input type="checkbox" id="active" name="Activity" value="active">
+                <label for="active">Active</label><br><br><br><br>
+
+
+
+
+
+            </div>
+        </div>
+
+
+        <!--Submit and reset buttons-->
+
+        <br><br><br>
+        <div class="btnStyle">
+        <input type="reset" value="Reset" >&emsp;&emsp;
+        <input type="submit" value="Update"><br><br><br>
+         </div>
+
+    </form>
+
+
+</body>
+</html>
