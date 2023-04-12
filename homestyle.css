@@ -1,8 +1,11 @@
 body{background-color: rgb(223, 226, 252);}
 .headofpage{background-color: rgb(151, 158, 223);}
-a{ text-decoration: none; }
-nav>ul{list-style-type: none; }
-li{display: inline;}
+/* a{ text-decoration: none; } */
+/* nav>ul{list-style-type: none; } */
+li{
+    display: inline;
+    color: #ffffff;
+}
 .home{float: left;}
 .logout{float: right;}
 p.n{background-color: rgb(235, 247, 247); }
