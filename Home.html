@@ -2,37 +2,32 @@
 <Html>   
 <Head>    
   <Title>SRN Student Affairs </Title>
-  <link rel="stylesheet" href="globalstyle.css">
-
-  <!-- <link rel="icon" type="image/png" href="logo.png"> -->
-  
+  <link rel="icon" type="image/png" href="tablogo.png">
+  <script src = "script.js"></script>
+  <!-- <script>
+    $(function(){
+      $("#includeHtml").load("Navigation.html")
+    });
+  </script> -->
 </Head>
-<Body>
-  <header class = "headofpage">
-    <a style= "font-size: xx-large;color: #000000;"; href="Home.html"><img src="newlogo.png" style="width: 300px; height: 100px;"/> </a>
-    <!-- <hr> -->
-     
-    
-    <div class ="navBar">
-      <ul class ="navList">
-        <li class="home"><a href="Home.html">Home </a></li> 
-        
-        <div class = "dropdown">
-          <li class="dropbtn">Students</li>
-          <div class="dropdown-content">
-              <a href="ViewStudents.html">View students</a>
-              <a href="AddStudent.html"> Add student </a>
-              <a href="UpdateStudent.html"> Update student</a>
-              <a href="AssignDepartment.html"> Assign Department </a>
-          </div>
-        </div>
 
-        <li class ="s"><a href ="SerachStudent.html">Search</a></li>
-        <li class="logout"><a href="Login.html">  Log out</a></li>
-      </ul>
-    </div>
-      <!-- <hr> -->
-    </header>
+<Body>
+ 
+  <!-- <div id ="includeHtml"></div> -->
+  <!-- <div id ="Navigation"><iframe src ="Navigation.html" ></iframe></div> -->
+  <include src ="Navigation.html"></include><script>
+    let includes = document.getElementsByTagName('include');
+    for (var i = 0; i < includes.length; i++) {
+       let include = includes[i];
+       load_file(includes[i].attributes.src.value, function(text) {
+          include.insertAdjacentHTML('afterend', text);
+          include.remove();
+       });
+    }
+    function load_file(filename, callback) {
+       fetch(filename).then(response => response.text()).then(text => callback(text));
+    }
+ </script> 
   <p>
     <h1>Notifications</h1>
   </p>    

@@ -1,8 +1,9 @@
 body{
-    
+    margin:0;
 }
 .headofpage{
     width: 100%;
+    margin: 0;
 }
 a{ text-decoration: none; }
 li>a {
@@ -15,12 +16,12 @@ li>a {
     /* margin: 0;*/
     padding: 0; 
 }
-.s{
-    padding: 16px;
-}
+
 .navList>li{
     display: inline;
     padding: 16px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 .navBar{
     background-color: rgb(2, 40, 81);
@@ -28,6 +29,7 @@ li>a {
     padding: 0; */
     /* width: 100%; */
     width: 100%;
+    height: inherit;
 }
 ul>li{
     /* display: inline; */
@@ -76,13 +78,17 @@ ul>li{
     display: block;
     text-align: center;
   }
-  .navBar>ul>li:hover{
+  .navBar>ul>li a:hover{
     background-color: rgb(255, 191, 0);
     /* display:block; */
+    padding: 16px;
+   
   }
-  
+ 
   .dropdown-content>a:hover{
     background-color: rgb(255, 191, 0);
+    padding: 16px;
+
   }
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {display: block;}
