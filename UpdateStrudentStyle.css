@@ -1,3 +1,62 @@
+a{
+    text-decoration: none; 
+    font-size: xx-large;
+    color: #000000;
+}
+
+img{
+    width: 300px; 
+    height: 100px;
+}
+h1{
+    text-align: center;
+}
+
+form{
+    margin-left: 22%;
+    width: 100%;
+}
+.txtboxStyle1{
+    width: 28.5%;
+}
+
+.txtboxStyle2{
+    width: 60%;
+}
+.btnStyle{
+    margin-left: 90%;
+    display:flex;
+    position: relative;
+    top: -70px;
+    left: -400px;
+    border: none;
+}
+
+.btnStyle input{
+    background-color:#022851;
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+
+[for=lname]{
+    margin-left: 24.5%;
+}
+
+.radio{
+    margin-left: 10%;
+}
+ul{
+    list-style-type: none;
+}
 #Update_student {
     position: relative;
     left: 3px;
@@ -60,8 +119,3 @@ input#male , input#female {
     font-size: 14px;
 }
 
-.btnStyle {
-    position: relative;
-    top: -70px;
-    left: -400px;
-}

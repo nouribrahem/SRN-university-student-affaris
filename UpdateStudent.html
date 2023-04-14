@@ -1,57 +1,12 @@
 
 <!DOCTYPE html>
 <html>
-  
   <head>
     <link rel="stylesheet" type="text/css" href="UpdateStrudentStyle.css">
-  <style>
-    h1{
-        text-align: center;
-    }
-    
-    form{
-        margin-left: 22%;
-        width: 100%;
-    }
-    .txtboxStyle1{
-        width: 28.5%;
-    }
-    
-    .txtboxStyle2{
-        width: 60%;
-    }
-    .btnStyle{
-        margin-left: 90%;
-        display:flex;
-        
-       
-    }
-   
-
-    [type=button],[type=submit],[type=reset]{
-        width: 100%;
-    }
-    [for=lname]{
-        margin-left: 24.5%;
-    }
-    .gender{
-        
-    }
-    .radio{
-        margin-left: 10%;
-    }
-    a { text-decoration: none; }
-    ul{
-        list-style-type: none;
-      }
-    
-</style>
+    <a><img src="newlogo.png"/></a>
 </head>
-  
 <body>
-
     <p>
-        <a style= "font-size: xx-large;color: #000000;"; href="Home.html"><img src="logo.png" style="width: 40px; height: 40px;"/> SRN Student Affairs</a>
         <hr>
         </p> 
         <p>
@@ -70,42 +25,31 @@
             </nav>
           <hr>
         </p> 
+
     <br><br><h1 id = "Update_student">Update student information</h1><br><br><br><br>
     <form action ="Submitted_Successfully.html" method="post">
-
-        
-
         <!--First name AND last name-->
-
         <label for="fname" >First name:</label><label for="lname">Last name:</label> <br><br>
         <input type="text" id="fname" name="fname" class="txtboxStyle1" placeholder="First name">&emsp;
-        <input type="text" id="lname" name="lname" class ="txtboxStyle1"placeholder="Last name"><br><br>
-
-
-        
+        <input type="text" id="lname" name="lname" class ="txtboxStyle1"placeholder="Last name"><br><br>     
         
         <!--ID-->
-
         <label for="ID">ID:</label> <br><br>
         <input type="text" id="ID" name="ID" minlength="8" class="txtboxStyle2" placeholder="20XXXXXX"><br><br>
 
         <!--Email-->
-
         <label for="email">Email:</label><br><br>
         <input type="email" id="email" name="email" class="txtboxStyle2" placeholder="Example@gmail.com"><br><br>
 
         <!--GPA -->
-
         <label for="GPA">GPA:</label><br><br>
         <input type="GPA" id="GPA" name="GPA" class="txtboxStyle2" placeholder="GPA"><br><br>
 
         <!--Phone number -->
-
         <label for="phone_no">Mobile Number:</label><br><br>
         <input type="tel" id="phone_no" name="phone_no" minlength="11"  class="txtboxStyle2" placeholder="01XX XXX XXXX"><br><br>
 
         <!--Level-->
-
         <label for="level">Level: </label> <br><br>
         <input type=text list=level class="txtboxStyle2" placeholder="Choose your level">
         <datalist id=level >
@@ -116,18 +60,14 @@
         </datalist><br><br>
 
         <!--Date of birth-->
-
         <label for="DOB">Date of birth:</label><br><br>
         <input type="date" id="DOB" name="DOB" class="txtboxStyle2" placeholder="Date of birth"><br><br>
 
         <!--Gender-->
-
         <label for="gender">Gender: </label><br><br><br>
-
         &emsp;&ensp;
         <input type="radio" id="male" name="gender" value="Male" class="radio">
         <label for="gender" class="Gender">Male</label>&emsp;&emsp;
-        
         <input type="radio" id="female" name="gender" value="female">
         <label for="gender" class="Gender">Female</label>
         <br><br><br><br><br><br>

@@ -1,0 +1,29 @@
+label{
+    width:100px;
+    display:inline-block;
+}
+
+a{ 
+    text-decoration: none; 
+}
+
+ul{
+    list-style-type: none;
+}
+
+button { /*Position to be changed reltive to form*/
+    background-color:#022851;
+    margin: 5px 5px;
+    padding: 10px 10px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0856a9;
+}
+  
