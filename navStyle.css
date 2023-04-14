@@ -1,5 +1,9 @@
+Html{
+  scroll-behavior: smooth;
+}
 body{
     margin:0;
+    /* font-family:; */
 }
 .headofpage{
     width: 100%;
@@ -20,16 +24,16 @@ li>a {
 .navList>li{
     display: inline;
     padding: 16px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 .navBar{
     background-color: rgb(2, 40, 81);
-    /* margin: 0;
-    padding: 0; */
-    /* width: 100%; */
     width: 100%;
     height: inherit;
+}
+.navBar>ul>li a{
+  padding: 16px;
 }
 ul>li{
     /* display: inline; */
@@ -81,13 +85,14 @@ ul>li{
   .navBar>ul>li a:hover{
     background-color: rgb(255, 191, 0);
     /* display:block; */
-    padding: 16px;
+    padding: auto;
+    border-;
    
   }
  
   .dropdown-content>a:hover{
     background-color: rgb(255, 191, 0);
-    padding: 16px;
+    /* padding: 16px; */
 
   }
   /* Show the dropdown menu on hover */
