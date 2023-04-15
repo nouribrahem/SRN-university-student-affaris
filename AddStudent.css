@@ -1,108 +1,14 @@
-label{
-    width:100px;
-    display:inline-block;
-}
-
-img{
-    width: 300px; 
-    height: 100px;
-}
-
-a{
-    text-decoration: none; 
-    font-size: xx-large;
-    color: #000000;
-}
-
-
-button { /*Position to be changed reltive to form*/
-    background-color:#022851;
-    margin: 5px 5px;
-    padding: 10px 10px;
-    text-align: center;
-    color: #ffffff;
-    font-size: 10px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #0856a9;
-}
-
-input[type="radio"]:checked  {
-    background-color:  #0856a9;
-    border-color: #2196f3;
-}
-
-h1{
-    text-align: center;
-    
-}
-#Add_student {
+.whole{
+    width:750px;
+    height: 670px;
     position: relative;
-    left: 3px;
-    top : 20px;
-    color: #022851 ;
-    font-family:  ProximaNova, sans-serif;
-}
-
-label {
-    font-family: ProximaNova, sans-serif;
+    border: 2px solid #022851;
+    border-radius: 10px;
+    margin-top: 100px; 
+    padding-bottom: 20px;
+    margin: 40px auto;
     position: relative;
-    top: 5px;
-    left: 1px;
-    right: 129px;
-    color: #022851;
-    font-size: 15px;
-}
-
-form{
-    margin-left: 22%;
-    width: 100%;
-}
-.txtboxStyle1{
-    width: 28.5%;
-}
-
-.txtboxStyle2{
-    width: 60%;
-}
-.btnStyle{
-    margin-left: 90%;
-    display:flex;
-    position: relative;
-    top: -70px;
-    left: -400px;
-    border: none;
-}
-
-.btnStyle input{
-    background-color:#022851;
-    display: flex;
-    justify-content: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: center;
-    color: #ffffff;
-    font-size: 15px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-}
-
-
-[for=lname]{
-    margin-left: 24.5%;
-}
-
-
-.radio{
-    margin-left: 10%;
-}
-ul{
-    list-style-type: none;
+    padding-top: 30px;
 }
 #Update_student {
     position: relative;
@@ -132,20 +38,13 @@ label {
     font-family: ProximaNova, sans-serif;
     position: relative;
     top: 5px;
-    left: 1px;
+    left: -1px;
     right: 129px;
     color: #022851;
     font-size: 15px;
 }
 
-input#male , input#female {
-    position: relative;
-    right: 30px;
-    top: -20px;
-    width: 15px;  
-}
-
-input#Active , input#Inactive {
+input#male , input#female, input#active , input#inactive {
     position: relative;
     right: 30px;
     top: -20px;
@@ -159,18 +58,51 @@ input#Active , input#Inactive {
    font-size: 14px;
 }
 
-#active {
+
+
+.btnStyle {
     position: relative;
-    top: -25px;
-    left: -94px;
-    width: 14px;
+    top: -70px;
+    left: -400px;
+}
+h1{
+    text-align: center;
 }
 
-.Active {
-    position: relative;
-    top: -36px;
-    left: -97px;
-    font-size: 14px;
+form{
+    margin-left: 22%;
+    width: 100%;
+}
+.txtboxStyle1{
+
+    width: 92%;
+}
+
+.txtboxStyle2{
+    margin-left: 24.5%;
 }
 
 
+.divbtnStyle{
+    margin-left: 46.5%;
+    display:flex;
+}
+
+[type=button],[type=submit],[type=reset]{
+    width: 70px;
+}
+
+
+.radio{
+    margin-left: 10%;
+}
+a { text-decoration: none; }
+
+ul{
+    list-style-type: none;
+  }
+.row{
+    
+    display: flex;
+   
+}
