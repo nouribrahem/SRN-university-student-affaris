@@ -1,155 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>SRN-ADD</title>
-        <head>
-            <link rel="stylesheet" type="text/css" href="AddStudent.css">
-            <link rel="stylesheet" href="navStyle.css">
-        </head>
-    </head>
-    <body>
-        <header class = "headofpage">
-            <a style= "padding: 10px;"; href="Home.html"><img src="newlogo.png" style="width: 300px; height: 90px;padding: 20px;"/> </a>
-            <!-- <hr> -->
-             
+  <head>
+    <link rel="stylesheet" type="text/css" href="AddStudent.css">
+    <link rel="stylesheet" href="navStyle.css">
+</head>
+
+<body>
+    <header class = "headofpage">
+        <a style= "padding: 10px;"; href="Home.html"><img src="newlogo.png" style="width: 300px; height: 90px;padding: 20px;"/> </a>
+        <!-- <hr> -->
+        <div class ="navBar">
+          <ul class ="navList">
+            <li class="home"><a href="Home.html">Home </a></li> 
             
-            <div class ="navBar">
-              <ul class ="navList">
-                <li class="home"><a href="Home.html">Home </a></li> 
-                
-                <div class = "dropdown">
-                  <li class="dropbtn">Students</li>
-                  <div class="dropdown-content">
-                      <a href="ViewStudents.html">View students</a>
-                      <a href="AddStudent.html"> Add student </a>
-                  </div>
-                </div>
-          
-                <li class ="s"><a href ="SerachStudent.html">Search</a></li>
-                <li class="logout"><a href="Login.html">  Log out</a></li>
-              </ul>
+            <div class = "dropdown">
+              <li class="dropbtn">Students</li>
+              <div class="dropdown-content">
+                  <a href="ViewStudents.html">View students</a>
+                  <a href="AddStudent.html"> Add student </a>
+              </div>
             </div>
-              <!-- <hr> -->
-            </header>
-        <br><h1> Add Student</h1>
-        <div class ="whole"> 
+      
+            <li class ="s"><a href ="SerachStudent.html">Search</a></li>
+            <li class="logout"><a href="Login.html">  Log out</a></li>
+          </ul>
+        </div>
+          <!-- <hr> -->
+        </header>
+    <div class="Whole">
+    <br><br><h1 id = "AddStudent" style="text-align: center;">Add Student</h1><br><br><br><br>
+    <form  method="post" >
+        <!--First name AND last name-->
+        <label for="fname"style="left: 7px;" >First name:</label><label for="lname"style="left: 9px;">Last name:</label> <br><br>
+        <input type="text" id="fname" name="fname" class="txtboxStyle1" placeholder="First name">&emsp;
+        <input type="text" id="lname" name="lname" class ="txtboxStyle1"placeholder="Last name"><br><br>     
+        
+        <!--ID  and Email-->
+        <label for="ID" style="left: -36px;">ID:</label> <label for="email" style="left: 20px;">Email:</label><br><br> 
+        <input type="text" id="ID" name="ID" minlength="8" class="txtboxStyle2" placeholder="20XXXXXX">&emsp;        
+        <input type="email" id="email" name="email" class="txtboxStyle2" placeholder="Example@gmail.com"><br><br>
+
+        <!--GPA and Phone number -->
+        <label for="GPA" style="left: 2px;" >GPA:</label><label for="phone_no" style="left:45px;">Mobile Number:</label><br><br>
+        <input type="GPA" id="GPA" name="GPA" class="txtboxStyle2" placeholder="GPA"  >&emsp;   
+        <input type="tel" id="phone_no" name="phone_no" minlength="11"  class="txtboxStyle2" placeholder="01XX XXX XXXX"><br><br>
+
+        <!--Level-->
+        <label for="level">Level: </label> <label for="DOB" style="left:30px">Date of birth:</label><br><br>
+        <input type=text list=level class="txtboxStyle2" placeholder="Choose your level">
+        <datalist id=level >
+            <option> 1
+            <option> 2
+            <option> 3 
+            <option> 4
+        </datalist>&emsp; 
+
+        <!--Date of birth-->
+        
+        <input type="date" id="DOB" name="DOB" class="txtboxStyle2" placeholder="Date of birth"style="right:5px; height:34px" ><br><br>
+        
+         <!--Level-->
+         <label for="deparment" style = "left: -150px;">Deparment: </label> <br><br>
+         <input type=text list=dep class="txtboxStyle2" placeholder="Choose deparment" style = "left: -165px;">
+         <datalist id = dep>
+            <option value="">Select department</option>
+            <option value="General">General</option>
+            <option label ="Computer Science" value="Computer Science">Computer Science</option>
+            <option label ="Information System" value="Information System">Information System</option>
+            <option label ="Information Technology" value="Information Technology">Information Technology</option>
+            <option label ="Decision Support" value="Decision Support">Decision Support</option>
+            <option label ="Artificial Intelligence" value="Artificial Intelligence">Artificial Intelligence</option>
+            <option label ="Software Engineering" value="Software Engineering">Software Engineering</option>
+            <option label ="Bionformatics" value="Bionformatics">Bionformatics</option>
+            <option label ="Data Science" value="Data Science">Data Science</option>
+         </datalist> <br><br>
             
-            <form action ="Submitted_Successfully.html" method="post">
 
-                <div class="row">
-                <div class="left" style="width: 50%; left: 150px;">
+       
+        <!--Gender-->
+        <label for="g" style = "left: -165px;">Gender: </label><br><br><br>
+        &emsp;&ensp;
+        <input type="radio" id="male" name="gender" value="Male" class="radio">
+        <label for="gender" class="male">Male</label>&emsp;&emsp;
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="gender" class="female">Female</label>
+        <br>
 
-                    <label for="fname" >First name:</label> <br><br>
-                    <input type="text" id="fname" name="fname" class="txtboxStyle1" placeholder="First name"><br><br>
+        <!--Status-->
+        <label for="status style = "left: -168px;">Status: </label><br><br><br> &emsp;&ensp;
 
-                    <label for="ID">ID:</label> <br><br>
-                    <input type="text" id="ID" name="ID" minlength="8" class="txtboxStyle1" placeholder="20XXXXXX"><br><br>
+        <input type="radio" id="active" name="status" value="Active" class="radio">
+        <label for="status" class="active">Active</label>&emsp;&emsp;
 
-                    <!--Email-->
+        <input type="radio" id="inactive" name="status" value="Inactive" class="radio">
+        <label for="status" class="inactive">Inactive</label>&emsp;&emsp;
+        <br><br><br><br>
 
-                    <label for="email">Email:</label><br><br>
-                    <input type="email" id="email" name="email" class="txtboxStyle1" placeholder="Example@gmail.com"><br><br>
+        <!--Submit and reset buttons-->
+        <div class="btnStyle">
+            <input type="Save" value="Save">&emsp;
+            <input type="reset" value="Reset" ><br><br><br>
+        </div>
 
-                    <!--Date of birth-->
+        
+        
 
-                    <label for="DOB">Date of birth:</label><br><br>
-                    <input type="date" id="DOB" name="DOB" class="txtboxStyle1" placeholder="Date of birth"><br><br>
-
-                    <!--Level-->
-
-                    <label for="level">Level: </label> <br><br>
-                    <select name="level" id="level" class="txtboxStyle1" placeholder="Select level" style="height: 30px;">
-                    
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-
-                    </select>
-                    <br><br>
-                    <!--Gender-->
-
-                    <label for="gender">Gender: </label><br><br><br>
-
-                    &emsp;&ensp;
-                    <input type="radio" id="male" name="gender" value="Male" >
-                    <label for="gender" class="Gender">Male</label>&emsp;&emsp;
-                    
-                    <input type="radio" id="female" name="gender" value="female" >
-                    <label for="gender" class="Gender">Female</label>
-                    <br><br><br><br><br><br>
-
-                </div>
-                <div class ="right"style="width: 50%;">
-                    <!--Last name-->
-
-                    <label for="lname">Last name:</label> <br><br>
-                
-                    <input type="text" id="lname" name="lname" class ="txtboxStyle1"placeholder="Last name"><br><br>
-
-
-                    
-                    <!--GPA-->
-
-                    <label for="GPA" >GPA:</label> <br><br>
-                    <input type="GPA" id="GPA" name="GPA" class="txtboxStyle1" placeholder="GPA"><br><br>
-
-                    
-                
-                    <!--Phone number -->
-
-                    <label for="phone_no">Mobile Number:</label><br><br>
-                    <input type="tel" id="phone_no" name="phone_no" minlength="11"  class="txtboxStyle1" placeholder="01XX XXX XXXX"><br><br>
-
-                
-                    <!--Date of entry-->
-                    <label for="DOE">Date of entry:</label><br><br>
-                    <input type="number" id="DOE" name="DOE" minlength="4"  class="txtboxStyle1" placeholder="20XX"><br><br>
-
-                    
-                    <!--Department-->
-
-                    <label for="department">Department:</label><br><br>
-                    <select name="department" id="department" class="txtboxStyle1" placeholder="Select Department" style="height: 30px;">
-                        
-                        <option label ="General" value="General">General</option>
-                        <option label ="Computer Science" value="Computer Science">Computer Science</option>
-                        <option label ="Information System" value="Information System">Information System</option>
-                        <option label ="Information Technology" value="Information Technology">Information Technology</option>
-                        <option label ="Decision Support" value="Decision Support">Decision Support</option>
-                        <option label ="Artificial Intelligence" value="Artificial Intelligence">Artificial Intelligence</option>
-                        <option label ="Software Engineering" value="Software Engineering">Software Engineering</option>
-                        <option label ="Bionformatics" value="Bionformatics">Bionformatics</option>
-                        <option label ="Data Science" value="Data Science">Data Science</option>
-
-                    </select><br><br>
-
-                                
-                        
-                        
-                            
-                        <!--Status-->
-
-                        <label for="status">Status: </label><br><br><br>
-
-                        &emsp;&ensp;
-                        <input type="radio" id="active" name="status" value="Active" >
-                        <label for="status" class="Gender">Active</label>&emsp;&emsp;
-                        
-                        <input type="radio" id="inactive" name="status" value="Inactive" >
-                        <label for="status" class="Gender">Inactive</label>
-                        
-                        
-            
-                </div>
-            </div>
-
-                <div class="divbtnStyle">
-                    <input type="reset" value="Reset" >&emsp;
-                    <input type="submit" value="Update">&emsp;
-                    
-                </div>
-            </form>
+    </form>
     </div>
-    </body>
+
+
+</body>
 </html>
