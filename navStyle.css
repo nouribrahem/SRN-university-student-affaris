@@ -1,6 +1,6 @@
 Html{
   scroll-behavior: smooth;
-  background-image: url(80910copy.png);
+  background-image: url("80910copy.png");
     background-size: cover;
 }
 body{
@@ -88,9 +88,9 @@ ul>li{
     background-color: rgb(255, 191, 0);
     /* display:block; */
     padding: auto;
-    border-;
+    }
    
-  }
+  
  
   .dropdown-content>a:hover{
     background-color: rgb(255, 191, 0);
