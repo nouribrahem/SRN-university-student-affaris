@@ -5,11 +5,11 @@
     border: 2px solid #022851;
     border-radius: 10px;
     margin-top: 100px; 
-    padding-bottom: 20px;
+    padding-bottom: -20px;
     margin: 40px auto;
     position: relative;
 }
-#Update_student {
+#AddStudent {
     position: relative;
     left: 3px;
     top : 20px;
@@ -75,32 +75,58 @@ input:focus {
     outline: none;
 }
 
-input#male , input#female ,input#active, input#inactive{
+input#male {
     position: relative;
     right: 30px;
     top: -20px;
-    width: 15px;  
+    width: 14.75px; 
 }
-/* 
-input#active, input#inactive{
+input#inactive {
     position: relative;
-    right: 30px;
+    left: -244px;
     top: -20px;
-    width: 15px;  
-} */
-
-
-.male,.active {
-   position: relative;
-   top: -30px;
-   left: -1px;
-   font-size: 14px;
+    width: 14.75px; 
 }
-.female, .inactive{
-   position: relative;
-   top: -30px;
-   left: -30px;
-   font-size: 14px;
+
+input#active {
+    position: relative;
+    left: 15px;
+    top: -20px;
+    width: 14.75px; 
+}
+
+input#female {
+    position: relative;
+    right: 260px;
+    top: -20px;
+    width: 14.75px;  
+}
+
+.female {
+    position: relative;
+    top: -30px;
+    left: -255px;
+    font-size: 14px;
+}
+
+.male {
+    position: relative;
+    top: -30px;
+    left: -1px;
+    font-size: 14px;
+}
+
+.active {
+    position: relative;
+    top: -30px;
+    left: 18px;
+    font-size: 14px;
+}
+ .inactive{
+    position: relative;
+    top: -30px;
+    left: -241px;
+    font-size: 14px;
 }
 
 .radio{

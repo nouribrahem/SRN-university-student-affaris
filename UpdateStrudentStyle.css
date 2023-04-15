@@ -79,11 +79,20 @@ label {
     margin-right:250px;
 }
 
-input#male , input#female {
+input#male  {
     position: relative;
     right: 30px;
     top: -20px;
     width: 15px;  
+}
+
+input#female {
+    position: relative;
+    right: 30px;
+    top: -20px;
+    width: 14.75px; 
+    left: -255px; 
+    
 }
 
 .male {
@@ -95,8 +104,9 @@ input#male , input#female {
 .female{
     position: relative;
    top: -30px;
-   left: -30px;
+   left: -252px;
    font-size: 14px;
+
 }
 .radio{
     position: relative;
