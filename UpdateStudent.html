@@ -25,43 +25,37 @@
             </nav>
           <hr>
         </p> 
-
-    <br><br><h1 id = "Update_student">Update student information</h1><br><br><br><br>
-    <form action ="Submitted_Successfully.html" method="post">
+    <div class="Whole">
+    <br><br><h1 id = "Update_student" style="text-align: center;">Update student information</h1><br><br><br><br>
+    <form action ="Submitted_Successfully.html" method="post" >
         <!--First name AND last name-->
-        <label for="fname" >First name:</label><label for="lname">Last name:</label> <br><br>
+        <label for="fname"style="left: 7px;" >First name:</label><label for="lname"style="left: 9px;">Last name:</label> <br><br>
         <input type="text" id="fname" name="fname" class="txtboxStyle1" placeholder="First name">&emsp;
         <input type="text" id="lname" name="lname" class ="txtboxStyle1"placeholder="Last name"><br><br>     
         
-        <!--ID-->
-        <label for="ID">ID:</label> <br><br>
-        <input type="text" id="ID" name="ID" minlength="8" class="txtboxStyle2" placeholder="20XXXXXX"><br><br>
-
-        <!--Email-->
-        <label for="email">Email:</label><br><br>
+        <!--ID  and Email-->
+        <label for="ID" style="left: -36px;">ID:</label> <label for="email" style="left: 20px;">Email:</label><br><br> 
+        <input type="text" id="ID" name="ID" minlength="8" class="txtboxStyle2" placeholder="20XXXXXX">&emsp;        
         <input type="email" id="email" name="email" class="txtboxStyle2" placeholder="Example@gmail.com"><br><br>
 
-        <!--GPA -->
-        <label for="GPA">GPA:</label><br><br>
-        <input type="GPA" id="GPA" name="GPA" class="txtboxStyle2" placeholder="GPA"><br><br>
-
-        <!--Phone number -->
-        <label for="phone_no">Mobile Number:</label><br><br>
+        <!--GPA and Phone number -->
+        <label for="GPA" style="left: 2px;" >GPA:</label><label for="phone_no" style="left:45px;">Mobile Number:</label><br><br>
+        <input type="GPA" id="GPA" name="GPA" class="txtboxStyle2" placeholder="GPA"  >&emsp;   
         <input type="tel" id="phone_no" name="phone_no" minlength="11"  class="txtboxStyle2" placeholder="01XX XXX XXXX"><br><br>
 
         <!--Level-->
-        <label for="level">Level: </label> <br><br>
+        <label for="level">Level: </label> <label for="DOB" style="left:30px">Date of birth:</label><br><br>
         <input type=text list=level class="txtboxStyle2" placeholder="Choose your level">
         <datalist id=level >
             <option> Freshman
             <option> Sophomore
             <option> Junior 
             <option> Senior
-        </datalist><br><br>
+        </datalist>&emsp; 
 
         <!--Date of birth-->
-        <label for="DOB">Date of birth:</label><br><br>
-        <input type="date" id="DOB" name="DOB" class="txtboxStyle2" placeholder="Date of birth"><br><br>
+        
+        <input type="date" id="DOB" name="DOB" class="txtboxStyle2" placeholder="Date of birth"style="right:5px; height:34px" ><br><br>
 
         <!--Gender-->
         <label for="gender">Gender: </label><br><br><br>
@@ -84,6 +78,7 @@
         
 
     </form>
+    </div>
 
 
 </body>
