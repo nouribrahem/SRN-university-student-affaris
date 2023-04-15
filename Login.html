@@ -2,20 +2,21 @@
 <html>
 <head>
 	<title>SRN-Login</title>
-	<a><img src="newlogo.png"/></a>
+	
 	<link rel="stylesheet" type="text/css" href="LoginStyle.css">
 </head>
 
 <body>
 	<div id = whole >
+		<a ><img src="newlogo.png"/></a>
 		<div id = "LoginForm">
-			<h1 id = "login_header" > Get Started</h1>
-			<form action = "Home.html" method="post">
+			<h1 id = "login_header" > Welcome!</h1>
+			<form action = "NewHomePage.html" method="post">
 				<label for="username" >Username</label><br>
 				<input type="text"   placeholder="Enter your username" required><br><br>
 				<label for="password" >Password</label><br>
 				<input type="password"  placeholder="Enter your password" required><br><br>
-				<label for="remember">Remember Me</label>
+				<label for="remember" class="remember">Remember Me</label>
 				<input type="checkbox" id="remember" name="remember"><br>
 				<button type="submit">Login</button> 
 			</form>
