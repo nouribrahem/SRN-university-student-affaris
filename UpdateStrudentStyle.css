@@ -1,6 +1,6 @@
 .Whole {
     width:750px;
-    height: 670px;
+    height: 750px;
     position: relative;
     border: 2px solid #022851;
     border-radius: 10px;
@@ -121,4 +121,6 @@ form {
     text-align: center;
 }
 
-
+input:disabled:hover {
+    cursor: not-allowed;
+  }
