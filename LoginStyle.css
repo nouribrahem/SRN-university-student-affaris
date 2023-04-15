@@ -1,3 +1,8 @@
+body {
+    background-image: url(globe-technology-business-with-gradient-wallpaper.jpg);
+    background-size: cover;
+}
+    
 a{
     font-size: xx-large;
     color: #000000;
@@ -22,6 +27,7 @@ img{
 }
 
 #whole {
+     
      width : 400px;
      margin-top: 40px;
      margin-left: 540px;
