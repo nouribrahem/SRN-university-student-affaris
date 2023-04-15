@@ -31,6 +31,11 @@ button:hover {
     background-color: #0856a9;
 }
 
+input[type="radio"]:checked  {
+    background-color:  #0856a9;
+    border-color: #2196f3;
+}
+
 h1{
     text-align: center;
     

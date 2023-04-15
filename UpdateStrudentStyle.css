@@ -1,3 +1,8 @@
+img{
+    width: 300px; 
+    height: 100px;
+}
+
 .Whole {
     width:1000px;
     height: 700px;
@@ -17,6 +22,36 @@
     font-family:  ProximaNova, sans-serif;
 }
 
+.btnStyle input[value="Update"] {
+    background-color:#022851;
+    width: 100px;
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    top: -70px;
+    float: left;
+}
+
+.btnStyle input[value="Delete"] {
+    background-color: grey;
+    width: 100px;
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    top: -70px;
+    float: left;
+}
+
 input  {
     position : relative;
     top: 5px;
@@ -25,7 +60,6 @@ input  {
     outline: none;
     width: 300px;
     height: 30px;
-
 }
 
 input:focus {
@@ -72,11 +106,9 @@ input#male , input#female {
     font-size: 14px;
 }
 
-.btnStyle {
-    position: relative;
-    top: -70px;
-    left: -400px;
-}
+
 form {
     text-align: center;
 }
+
+
