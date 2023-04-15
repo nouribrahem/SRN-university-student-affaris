@@ -1,5 +1,7 @@
 Html{
   scroll-behavior: smooth;
+  background-image: url(80910copy.png);
+    background-size: cover;
 }
 body{
     margin:0;
