@@ -10,6 +10,7 @@ body{
 .headofpage{
     width: 100%;
     margin: 0;
+    background-color: #155da5;
 }
 a{ text-decoration: none; }
 li>a {
