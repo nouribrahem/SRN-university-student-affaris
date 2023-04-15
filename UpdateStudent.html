@@ -1,30 +1,32 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="UpdateStrudentStyle.css">
-    <a><img src="newlogo.png"/></a>
+    <link rel="stylesheet" href="navStyle.css">
 </head>
+
 <body>
-    <p>
-        <hr>
-        </p> 
-        <p>
-            <nav>
-            <ul>
-            <li style = "display: inline;"><a href="Home.html" style=" font-size: x-large; color: black;">Home |</a></li> 
-            <li style = "display: inline;float: right;"><a href="Login.html" style=" font-size: x-large; color: #000;"> | Log out</a></li>
-            <li style = "display: inline;"><button style="border: none; background-color: rgb(255, 255, 255); font-size: x-large;">Students</button></li>
-              <div>
-                <a style="font-size: x-large;color: black;" href="ViewStudents.html">View</a>
-                <a style="font-size: x-large;color: black;" href="AddStudent.html"> Add </a>
-                <a style="font-size: x-large;color: black;" href="UpdateStudent.html"> Update </a>
-                <a style="font-size: x-large;color: black;" href="AssignDepartment.html"> Department </a>
+    <header class = "headofpage">
+        <a style= "padding: 10px;"; href="Home.html"><img src="newlogo.png" style="width: 300px; height: 90px;padding: 20px;"/> </a>
+        <!-- <hr> -->
+        <div class ="navBar">
+          <ul class ="navList">
+            <li class="home"><a href="Home.html">Home </a></li> 
+            
+            <div class = "dropdown">
+              <li class="dropbtn">Students</li>
+              <div class="dropdown-content">
+                  <a href="ViewStudents.html">View students</a>
+                  <a href="AddStudent.html"> Add student </a>
               </div>
-           </ul>
-            </nav>
-          <hr>
-        </p> 
+            </div>
+      
+            <li class ="s"><a href ="SerachStudent.html">Search</a></li>
+            <li class="logout"><a href="Login.html">  Log out</a></li>
+          </ul>
+        </div>
+          <!-- <hr> -->
+        </header>
     <div class="Whole">
     <br><br><h1 id = "Update_student" style="text-align: center;">Update student information</h1><br><br><br><br>
     <form action ="Submitted_Successfully.html" method="post" >
@@ -58,13 +60,13 @@
         <input type="date" id="DOB" name="DOB" class="txtboxStyle2" placeholder="Date of birth"style="right:5px; height:34px" ><br><br>
 
         <!--Gender-->
-        <label for="gender">Gender: </label><br><br><br>
+        <label for="g" style = "left: -165px;">Gender: </label><br><br><br>
         &emsp;&ensp;
         <input type="radio" id="male" name="gender" value="Male" class="radio">
-        <label for="gender" class="Gender">Male</label>&emsp;&emsp;
+        <label for="gender" class="male">Male</label>&emsp;&emsp;
         <input type="radio" id="female" name="gender" value="female">
-        <label for="gender" class="Gender">Female</label>
-        <br><br><br><br><br><br>
+        <label for="gender" class="female">Female</label>
+        <br><br><br><br>
 
 
         <!--Submit and reset buttons-->

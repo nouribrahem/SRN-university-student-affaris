@@ -34,7 +34,7 @@ img{
     border-radius: 5px;
     position: relative;
     top: -70px;
-    float: left;
+    float: right;
 }
 
 .btnStyle input[value="Delete"] {
@@ -49,9 +49,15 @@ img{
     border-radius: 5px;
     position: relative;
     top: -70px;
-    float: left;
+    float: right;
 }
-
+.btnStyle input[value="Update"]:hover{
+    background-color: #0856a9;
+}
+.btnStyle input[value="Delete"]:hover
+{
+    background-color: rgb(175, 175, 175);
+}
 input  {
     position : relative;
     top: 5px;
@@ -85,13 +91,22 @@ input#male , input#female {
     width: 15px;  
 }
 
-.Gender {
+.male {
    position: relative;
    top: -30px;
-   left: -35px;
+   left: -1px;
    font-size: 14px;
 }
-
+.female{
+    position: relative;
+   top: -30px;
+   left: -30px;
+   font-size: 14px;
+}
+.radio{
+    position: relative;
+    left:-4px;
+}
 #active {
     position: relative;
     top: -25px;
