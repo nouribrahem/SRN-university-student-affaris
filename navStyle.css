@@ -2,6 +2,7 @@ Html{
   scroll-behavior: smooth;
   background-image: url("80910copy.png");
     background-size: cover;
+    font-family: proximaNova,sans-serif;
 }
 body{
     margin:0;
