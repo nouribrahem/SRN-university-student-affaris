@@ -1,5 +1,7 @@
 table, th, td {
-  border: 0px solid;
+  border: 2px solid#022851;
+  border-radius: 6px;
+  margin:20px;
 }
 
 table {
@@ -10,7 +12,7 @@ th {
   height: 40px;
   padding: 15px;
   text-align: left;
-  background-color: #080849;
+  /* background-color: #080849; */
   color: white;
 }
 
@@ -21,11 +23,11 @@ td {
 
 
 tr {
-  background-color: #fee898;
+  /* background-color: #fee898; */
 }
 
 tr:nth-child(even) {
-  background-color: #272781;
+  /* background-color: #272781; */
   color: white;
 }
 
@@ -50,7 +52,7 @@ button:hover {
 }
 
 tr:nth-child(even) button{
-  background-color:#fee898;
+  /* background-color:#fee898; */
   margin: 10px 20px;
   padding: 10px 20px;
   text-align: center;

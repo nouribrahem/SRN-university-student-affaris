@@ -1,3 +1,8 @@
+Html{
+  scroll-behavior: smooth;
+  background-image: url(80910copy.png);
+    background-size: cover;
+}
 img {
   width: 300px; 
   height: 90px;
@@ -32,7 +37,7 @@ a{
 
   }
   button:hover{
-    background-color:  #0856a9;
+    background-color:  rgb(255, 191, 0);
   }
   
   

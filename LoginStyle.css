@@ -1,3 +1,8 @@
+Html{
+    scroll-behavior: smooth;
+    background-image: url(80910copy.png);
+      background-size: cover;
+  }
 body {
     background-image: url(globe-technology-business-with-gradient-wallpaper.jpg);
     background-size: cover;
