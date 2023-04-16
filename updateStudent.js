@@ -1,23 +1,41 @@
 let StudentID = new URLSearchParams(window.location.search);
 
 var id = StudentID.get("id");
-console.log(id);
-var arr;
-function getData() {
+var arr,newArr = [];
 
+function getData() {
     let data = window.localStorage.getItem("students");
     if (data != null) {
         arr = JSON.parse(data);
     }
 }
+const deleteButton = document.querySelector('.delete-button');
+deleteButton.addEventListener('click', function() {
+  const confirmDelete = confirm('Are you sure you want to delete this Student? This move can not be undone!');
+  if (confirmDelete) {
+    const btnStyleDiv = document.querySelector('.btnStyle');
+    getUpdatedArray();
+    window.localStorage.setItem('students', JSON.stringify(newArr));
+    alert("Student was deleted successfully");
+    window.location.href = "ViewStudents.html";
+  }
+});
 
+function getUpdatedArray(){
+    getData();
+    let j = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (id != arr[i].ID) {
+           newArr[j] = arr[i];
+           j++;          
+        }
+    }
+}
 function reteriveStudentData() {
     getData();
-    console.log(arr);
    
     for (let i = 0; i < arr.length; i++) {
         if (id == arr[i].ID) {
-            console.log("'Found");
             document.getElementById("ID").value = arr[i].ID;
             document.getElementById("email").value = arr[i].email;
 
@@ -31,7 +49,6 @@ function reteriveStudentData() {
             document.getElementById("DOB").value = arr[i].DOB;
 
             document.getElementById("dep").value = arr[i].dep;
-            console.log( arr[i].dep);
             document.getElementById(arr[i].gender).checked = true;
           
         }
