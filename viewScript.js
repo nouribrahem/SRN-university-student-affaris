@@ -16,7 +16,6 @@ function getData(){
 }
 function showData(){
     getData();
-    console.log(arr);
     var tbl = document.getElementById("students");
     
     for(let i = 0; i < arr.length; i++){
