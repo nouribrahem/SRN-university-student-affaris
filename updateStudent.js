@@ -30,8 +30,10 @@ function reteriveStudentData() {
             document.getElementById("level").value = arr[i].level;
             document.getElementById("DOB").value = arr[i].DOB;
 
-            document.getElementById("dep").value = arr[i].dep;
-            document.getElementById("gender").value = arr[i].gender;
+            // document.getElementById("dep").value = arr[i].dep;
+            console.log(arr[i].gender);
+            document.getElementById(arr[i].gender).checked = true;
+          
         }
     }
     

@@ -3,11 +3,13 @@ var arr2=[];
 arr2.push(
     {fname: "nour",lname: "Hassan" , ID: "20202124", 
     status:"active", level: "3", department:"Computer Science",
-    DOB:"2000-04-03", phone_no:"01009023432",GPA:"3.5",gender:"Female",email:"nour@gmail.com" },
+    DOB:"2000-04-03", phone_no:"01009023432",GPA:"3.5",
+    gender:"female",email:"nour@gmail.com" },
 
     {fname: "Mohamed",lname: "Hassan" , ID: "20202324", 
     status:"active", level: "2", dep:"Data Science",
-    DOB:"2000-04-05", phone_no:"0100666632",gpa:"3.1",gender:"Male",email:"mm@gmail.com"  }
+    DOB:"2000-04-05", phone_no:"0100666632",gpa:"3.1",
+    gender:"male",email:"mm@gmail.com"  }
     )
 window.localStorage.setItem('students', JSON.stringify(arr2));
 
@@ -32,7 +34,7 @@ function showData(){
         var cell_5 = row.insertCell();
         var cell_6 = row.insertCell();
         
-        var linkAssignDep = "AssignDepartment.html?" + "name=" + arr[i].name + 
+        var linkAssignDep = "AssignDepartment.html?" + "name=" + (arr[i].fname+" "+arr[i].lname) + 
         "&id=" +arr[i].ID + "&level="+ arr[i].level + "&department=" + arr[i].department;
         var linkUpdate = "UpdateStudent.html?" + "&id=" +arr[i].ID;
         cell_1.innerHTML = arr[i].fname+  " " + arr[i].lname;
