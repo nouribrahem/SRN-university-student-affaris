@@ -2,10 +2,12 @@ table, th, td {
   border: 2px solid#022851;
   border-radius: 6px;
   margin:20px;
+  background-color: #ffffff;
 }
 
 table {
-  width: 100%;
+  width: 75%;
+  border-radius: 6px;
 }
 
 th {
@@ -13,24 +15,13 @@ th {
   padding: 15px;
   text-align: left;
   /* background-color: #080849; */
-  color: white;
+  color: #022851;
 }
 
 td {
   padding: 15px;
   text-align: left;
 }
-
-
-tr {
-  /* background-color: #fee898; */
-}
-
-tr:nth-child(even) {
-  /* background-color: #272781; */
-  color: white;
-}
-
 table {
   border-collapse: collapse;
 }
@@ -45,23 +36,4 @@ button {
   cursor: pointer;
   border: none;
   border-radius: 5px;
-}
-
-button:hover {
-  background-color: #0856a9;
-}
-
-tr:nth-child(even) button{
-  /* background-color:#fee898; */
-  margin: 10px 20px;
-  padding: 10px 20px;
-  text-align: center;
-  color: #000000;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-}
-tr:nth-child(even) button:hover {
-  background-color: #e3d294;
 }
