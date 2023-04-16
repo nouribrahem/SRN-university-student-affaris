@@ -53,6 +53,7 @@
     padding-left: 0px;
     margin-top: 10px;
     margin-right: 10px;
+    margin-bottom: 10px;
     /* border: 1.5px solid #022851; */
     /* border-radius: 6px; */
     background: transparent url("searchlogo.png") no-repeat;
@@ -63,5 +64,3 @@
     border: none; 
     float: right;
 }
-
-  
