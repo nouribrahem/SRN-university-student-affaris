@@ -1,11 +1,15 @@
 var arr=[];
 var arr2=[];
-arr2.push({
-    name: "nour", ID: "20202124", status:"active", level: "3", department:"cs"
-},{name: "nour", ID: "20202124", status:"active", level: "3", department:"cs"},{name: "nour", ID: "20202524", status:"active", level: "9", department:"it"})
+arr2.push(
+    {fname: "nour",lname: "Hassan" , ID: "20202124", 
+    status:"active", level: "3", department:"Computer Science",
+    DOB:"2000-04-03", phone_no:"01009023432",GPA:"3.5",gender:"Female",email:"nour@gmail.com" },
+
+    {fname: "Mohamed",lname: "Hassan" , ID: "20202324", 
+    status:"active", level: "2", dep:"Data Science",
+    DOB:"2000-04-05", phone_no:"0100666632",gpa:"3.1",gender:"Male",email:"mm@gmail.com"  }
+    )
 window.localStorage.setItem('students', JSON.stringify(arr2));
-
-
 
 function getData(){
     
@@ -14,6 +18,7 @@ function getData(){
         arr =JSON.parse(data);
     }
 }
+
 function showData(){
     getData();
     var tbl = document.getElementById("students");
@@ -26,16 +31,17 @@ function showData(){
         var cell_4 = row.insertCell();
         var cell_5 = row.insertCell();
         var cell_6 = row.insertCell();
+        
         var linkAssignDep = "AssignDepartment.html?" + "name=" + arr[i].name + 
         "&id=" +arr[i].ID + "&level="+ arr[i].level + "&department=" + arr[i].department;
-        
-        cell_1.innerHTML = arr[i].name;
+        var linkUpdate = "UpdateStudent.html?" + "&id=" +arr[i].ID;
+        cell_1.innerHTML = arr[i].fname+  " " + arr[i].lname;
         cell_2.innerHTML = arr[i].ID;
         cell_3.innerHTML = arr[i].status;
         cell_4.innerHTML = arr[i].level;
         cell_5.innerHTML = arr[i].department;
         cell_6.innerHTML = '<div id="actions"><button id="status">Status</button><button id="assign">'+
-        '<a href="UpdateStudent.html" style="color:white;">Update<a/></button><button id="update">'+
+        '<a href="' + linkUpdate+'" style="color:white;">Update<a/></button><button id="update">'+
         '<a href="'+linkAssignDep +'"  style="color:white;">Assign Department<a/></button></div>';
 
     }
