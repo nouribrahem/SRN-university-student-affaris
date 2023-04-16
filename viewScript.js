@@ -26,13 +26,17 @@ function showData(){
         var cell_4 = row.insertCell();
         var cell_5 = row.insertCell();
         var cell_6 = row.insertCell();
-
+        var linkAssignDep = "AssignDepartment.html?" + "name=" + arr[i].name + 
+        "&id=" +arr[i].ID + "&level="+ arr[i].level + "&department=" + arr[i].department;
+        
         cell_1.innerHTML = arr[i].name;
         cell_2.innerHTML = arr[i].ID;
         cell_3.innerHTML = arr[i].status;
         cell_4.innerHTML = arr[i].level;
         cell_5.innerHTML = arr[i].department;
-        cell_6.innerHTML = '<div id="actions"><button id="status">Status</button><button id="assign"><a href="UpdateStudent.html" style="color:white;">Update<a/></button><button id="update"><a href="AssignDepartment.html" style="color:white;">Assign Department<a/></button></div>';
+        cell_6.innerHTML = '<div id="actions"><button id="status">Status</button><button id="assign">'+
+        '<a href="UpdateStudent.html" style="color:white;">Update<a/></button><button id="update">'+
+        '<a href="'+linkAssignDep +'"  style="color:white;">Assign Department<a/></button></div>';
 
     }
 }
