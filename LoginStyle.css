@@ -14,7 +14,7 @@ a{
 }
 
 img{
-    width: 300px; 
+    width: 400px; 
     height: 100px;
     margin-left: 45px; 
     margin-top: 50px;
@@ -30,22 +30,27 @@ img{
     position: relative;
     left: 3px;
     top : 20px;
-    color: #022851 ;
+    color: rgb(255, 191, 0) ;
     font-family:  ProximaNova, sans-serif;
 }
 
 #whole {
+    
+    max-width: 1000px;
+     width : 500px;
+     margin-top: 110px;
+     margin-left: 500px;
+     margin-right: 460px;
      
-     width : 400px;
-     margin-top: 150px;
-     margin-left: 540px;
-     margin-right: 410px;
      position: inherit;
      border: 2px solid #022851;
      border-radius: 10px;
-     padding-bottom: 50px;  
+     padding-bottom: 50px;
+     
+    
+  } 
       
-  }
+  
     
 button {
     background-color:#022851;
@@ -84,8 +89,8 @@ label {
     font-weight: bold;
     position: relative;
     top: 30px;
-    right: 129px;
-    color: #022851;
+    right: 115px;
+    color: rgb(255, 191, 0);
     font-size: 16px;
 }
 .remember{
