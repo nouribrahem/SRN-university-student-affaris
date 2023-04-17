@@ -55,4 +55,17 @@ addStudentButton.addEventListener('click', function () {
 });
 
 
+function disableDepartment() {
+  let level = document.getElementById('level').value;
+  if (level == "1" || level == "2") {
 
+    document.getElementById("cs").disabled = true;
+    document.getElementById("is").disabled = true;
+    document.getElementById("ds").disabled = true;
+    document.getElementById("it").disabled = true;
+    document.getElementById("ai").disabled = true;
+    document.getElementById("swe").disabled = true;
+    document.getElementById("dts").disabled = true;
+    document.getElementById("bio").disabled = true;
+  }
+}

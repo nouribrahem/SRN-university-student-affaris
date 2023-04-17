@@ -48,13 +48,13 @@
 
         <!--Level-->
         <label for="level">Level: </label> <label for="DOB" style="left:30px">Date of birth:</label><br><br>
-        <input id = "level" list=levels class="txtboxStyle2" placeholder="Choose your level" type = "number" min = "1" max = "4">
+        <input id = "level" list=levels class="txtboxStyle2" placeholder="Choose your level" onchange="disableDepartment()">
         <datalist id=levels >
             <option> 1
             <option> 2
             <option> 3 
             <option> 4
-        </datalist>&emsp; 
+        </datalist>&emsp;
 
         <!--Date of birth-->
         
@@ -66,14 +66,14 @@
          <datalist id = deps>
             <option value="">Select department</option>
             <option value="General">General</option>
-            <option label ="Computer Science" value="Computer Science">Computer Science</option>
-            <option label ="Information System" value="Information System">Information System</option>
-            <option label ="Information Technology" value="Information Technology">Information Technology</option>
-            <option label ="Decision Support" value="Decision Support">Decision Support</option>
-            <option label ="Artificial Intelligence" value="Artificial Intelligence">Artificial Intelligence</option>
-            <option label ="Software Engineering" value="Software Engineering">Software Engineering</option>
-            <option label ="Data Science" value="Data Science">Data Science</option>
-            <option value="Bioinformatics"></option>
+            <option id = "cs" label ="Computer Science" value="Computer Science">Computer Science</option>
+            <option id = "is"label ="Information System" value="Information System">Information System</option>
+            <option id = "it"label ="Information Technology" value="Information Technology">Information Technology</option>
+            <option id = "ds"label ="Decision Support" value="Decision Support">Decision Support</option>
+            <option id="ai" label ="Artificial Intelligence" value="Artificial Intelligence">Artificial Intelligence</option>
+            <option id = "swe" label ="Software Engineering" value="Software Engineering">Software Engineering</option>
+            <option id = "dts"label ="Data Science" value="Data Science">Data Science</option>
+            <option id = "bio"value="Bioinformatics"></option>
          </datalist> <br><br>
             
 
