@@ -1,7 +1,15 @@
 let students = [];
 
-let addStudentButton = document.getElementById('submit');
 
+let addStudentButton = document.getElementById('submit');
+function getData(){
+  let arr = [];
+  let data = window.localStorage.getItem("students");
+  if(data != null){
+      arr =JSON.parse(data);
+  }
+  students = arr;
+}
 // Add a click event listener to the button
 addStudentButton.addEventListener('click', function () {
 
