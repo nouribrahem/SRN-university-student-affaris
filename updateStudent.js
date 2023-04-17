@@ -61,8 +61,8 @@ updateForm.addEventListener('submit', function (event) {
     const formData = new FormData(updateForm);
     updateInfo(formData);
     window.localStorage.setItem('students', JSON.stringify(arr));
-    // alert("Student information updated successfully!");
-    // window.location.replace("ViewStudents.html");
+    alert("Student information updated successfully!");
+    window.location.replace("ViewStudents.html");
 });
 
 function restoreDefaultValuesForEmptyInputs() {
