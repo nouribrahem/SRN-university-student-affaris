@@ -1,17 +1,16 @@
 var arr=[];
-var arr2=[];
-arr2.push(
-    {fname: "nour",lname: "Hassan" , ID: "20202124", 
-    status:"active", level: "3", dep:"Computer Science",
-    DOB:"2000-04-03", phone_no:"01009023432",GPA:"3.5",
-    gender:"female",email:"nour@gmail.com" },
+// var arr2=[];
+// arr2.push(
+//     {fname: "nour",lname: "Hassan" , ID: "20202124", 
+//     status:"active", level: "3", dep:"Computer Science",
+//     DOB:"2000-04-03", phone_no:"01009023432",GPA:"3.5",
+//     gender:"female",email:"nour@gmail.com" },
 
-    {fname: "Mohamed",lname: "Hassan" , ID: "20202324", 
-    status:"active", level: "2", dep:"Data Science",
-    DOB:"2000-04-05", phone_no:"0100666632",GPA:"3.1",
-    gender:"male",email:"mm@gmail.com"  }
-    )
-window.localStorage.setItem('students', JSON.stringify(arr2));
+//     {fname: "Mohamed",lname: "Hassan" , ID: "20202324", 
+//     status:"active", level: "2", dep:"Data Science",
+//     DOB:"2000-04-05", phone_no:"0100666632",GPA:"3.1",
+//     gender:"male",email:"mm@gmail.com"  }
+//     )
 
 function getData(){
     
@@ -47,6 +46,7 @@ function changeStatus(button) {
 }
 function showData(){
     getData();
+    
     var tbl = document.getElementById("students");
     
     for(let i = 0; i < arr.length; i++){

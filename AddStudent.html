@@ -3,7 +3,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="AddStudent.css">
     <link rel="stylesheet" href="navStyle.css">
-    <script type="text/javascript" src="addStudent.js"></script>
+    
 </head>
 
 <body>
@@ -48,8 +48,8 @@
 
         <!--Level-->
         <label for="level">Level: </label> <label for="DOB" style="left:30px">Date of birth:</label><br><br>
-        <input type=text list=level class="txtboxStyle2" placeholder="Choose your level">
-        <datalist id=level >
+        <input id = "level"type=text list=levels class="txtboxStyle2" placeholder="Choose your level">
+        <datalist id=levels >
             <option> 1
             <option> 2
             <option> 3 
@@ -62,8 +62,8 @@
         
          <!--Level-->
          <label for="deparment" style = "left: -150px;">Deparment: </label> <br><br>
-         <input type=text list=dep class="txtboxStyle2" placeholder="Choose deparment" style = "left: -165px;">
-         <datalist id = dep>
+         <input id = "dep"type=text list=deps class="depart" placeholder="Choose deparment" style = "left: -165px;" >
+         <datalist id = deps>
             <option value="">Select department</option>
             <option value="General">General</option>
             <option label ="Computer Science" value="Computer Science">Computer Science</option>
@@ -72,7 +72,7 @@
             <option label ="Decision Support" value="Decision Support">Decision Support</option>
             <option label ="Artificial Intelligence" value="Artificial Intelligence">Artificial Intelligence</option>
             <option label ="Software Engineering" value="Software Engineering">Software Engineering</option>
-            <option label ="Bionformatics" value="Bionformatics">Bionformatics</option>
+            <option label ="Bionformatics" value="Bionformatics">Bioinformatics</option>
             <option label ="Data Science" value="Data Science">Data Science</option>
          </datalist> <br><br>
             
@@ -108,7 +108,7 @@
 
     </form>
     </div>
-    <script></script>
+    <script type="text/javascript" src="addStudent.js"></script>
 
 </body>
 </html>

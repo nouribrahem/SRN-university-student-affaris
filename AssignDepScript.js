@@ -11,6 +11,7 @@ document.getElementById("id").value = id;
 document.getElementById("level").value = level;
 document.getElementById("name").value = Studname;
 document.getElementById("GPA").value = gpa;
+console.log(dep);
 if (dep != null)
     document.getElementById("department").value = dep;
 
@@ -32,19 +33,21 @@ function getData() {
 
 function updateDep() {
     getData();
-    console.log(arr);
+    
     if(level < 3){
         alert("You can not assign deparment for students in levels less than 3!");
     }else{
         var newDep = document.getElementById("department").value;
         for (let i = 0; i < arr.length; i++) {
             if (id == arr[i].ID) {
-                arr[i].department = newDep;
+                arr[i].dep= newDep;
                 console.log(newDep);
             }
         }
         window.localStorage.setItem('students', JSON.stringify(arr));
+        console.log(arr);
         alert("Student department successfully assigned!");
+        window.location.replace("ViewStudents.html");
     }
     
 }

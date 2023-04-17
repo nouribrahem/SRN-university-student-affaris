@@ -3,8 +3,8 @@ let students = [];
 let addStudentButton = document.getElementById('submit');
 
 // Add a click event listener to the button
-addStudentButton.addEventListener('click', function() {
- 
+addStudentButton.addEventListener('click', function () {
+
   let firstName = document.getElementById('fname').value;
   let lastName = document.getElementById('lname').value;
   let phoneNumber = document.getElementById('phone_no').value;
@@ -19,20 +19,20 @@ addStudentButton.addEventListener('click', function() {
 
   // Create a new student object
   let student = {
-    firstName: firstName,
-    lastName: lastName,
-    phoneNumber: phoneNumber,
-    gpa: gpa,
-    id: id,
+    fname: firstName,
+    lname: lastName,
+    phone_no: phoneNumber,
+    GPA: gpa,
+    ID: id,
     level: level,
     email: email,
-    department: department,
-    dateOfBirth: dateOfBirth,
+    dep: department,
+    DOB: dateOfBirth,
     gender: gender,
     status: status
   };
 
-  
+
   students.push(student);
 
   // Clear the form
@@ -43,11 +43,15 @@ addStudentButton.addEventListener('click', function() {
   document.getElementById('ID').value = '';
   document.getElementById('level').value = '';
   document.getElementById('email').value = '';
-  document.getElementById('dep').value = '';
+  document.getElementsByClassName('depart').value = '';
   document.getElementById('DOB').value = '';
   document.querySelector('input[name="gender"]:checked').checked = false;
   document.querySelector('input[name="status"]:checked').checked = false;
 
-  // testing
+  // Save to local storage
   console.log(students);
+  window.localStorage.setItem('students', JSON.stringify(students));
 });
+
+
+

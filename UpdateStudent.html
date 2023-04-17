@@ -32,7 +32,7 @@
   <div class="Whole">
     <br><br>
     <h1 id="Update_student" style="text-align: center;">Update student information</h1><br><br><br><br>
-    <form id="form" method="post">
+    <form id="form" method="GET">
       <!--First name AND last name-->
       <label for="fname" style="left: 7px;">First name:</label><label for="lname" style="left: 9px;">Last name:</label>
       <br><br>
@@ -53,7 +53,7 @@
 
       <!--Level-->
       <label for="level">Level: </label> <label for="DOB" style="left:30px">Date of birth:</label><br><br>
-      <input type=text list="level" id="level" class="txtboxStyle2" placeholder="Choose your level" value="">
+      <input type=text name = "level"list="level" id="level" class="txtboxStyle2" placeholder="Choose your level" value="">
       <datalist id="level">
         <option> 1
         <option> 2
