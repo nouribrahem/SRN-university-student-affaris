@@ -9,8 +9,8 @@ function getActive(){
     return arr;
     
 }
-function showSearch(...arr){
-    // console.log(arr);
+function showSearch(arr){
+    console.log(arr);
     var tbl = document.getElementById("students");
     if(tbl){
         for(let i = 0; i < arr.length; i++){
@@ -29,7 +29,7 @@ function showSearch(...arr){
             cell_2.innerHTML = arr[i].ID;
             cell_3.innerHTML = arr[i].status;
             cell_4.innerHTML = arr[i].level;
-            cell_5.innerHTML = arr[i].department;
+            cell_5.innerHTML = arr[i].dep;
             cell_6.innerHTML = '<div id="actions"><button id="status">Status</button><button id="assign">'+
             '<a href="' + linkUpdate+'" style="color:white;">Update<a/></button><button id="update">'+
             '<a href="'+linkAssignDep +'"  style="color:white;">Assign Department<a/></button></div>';
