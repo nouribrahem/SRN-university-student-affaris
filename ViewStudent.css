@@ -24,6 +24,10 @@ td {
 }
 table {
   border-collapse: collapse;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+  margin-top:5%px;
 }
 
 button#status, button#assign,button#update {

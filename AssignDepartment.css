@@ -35,14 +35,17 @@ button:hover {
     padding-bottom: 20px;
     margin: 40px auto;
     position: relative;
+    background-color: #f7f7f7;
 }
 
 .fixed-input {
-    background-color: #f7f7f7;
-    border: none;
-    border-bottom: 1px solid #ccc;
+    background-color: rgb(226, 229, 229);
+    border: 1.5px solid #022851;
+    border-radius: 6px;
+    /* border-bottom: 1px solid #ccc; */
     padding: 5px;
     font-size: 1.1em;
+    background-color: rgb(226, 229, 229);
 }
 
 input {
@@ -51,9 +54,9 @@ input {
     padding: 5px;
     margin-bottom: 10px;
     margin-left: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    
     font-size: 16px;
+    
 }
 
 form {
@@ -100,4 +103,7 @@ input:disabled:hover {
     cursor: pointer;
     border-color: #666;
   }
-  
+  input:focus {
+    border: 1.5px solid rgb(255, 191, 0);
+    outline: none;
+}
