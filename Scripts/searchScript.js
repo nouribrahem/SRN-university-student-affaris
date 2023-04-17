@@ -45,7 +45,7 @@ function showSearch(arr){
             cell_3.innerHTML = arr[i].status;
             cell_4.innerHTML = arr[i].level;
             cell_5.innerHTML = arr[i].dep;
-            cell_6.innerHTML = '<div id="actions"><button id="status" onClick = "changeStatus(this)">Status</button><button id="assign">'+
+            cell_6.innerHTML = '<div id="actions"><button id="status" onClick = "changeStatus(this)">Change Status</button><button id="assign">'+
             '<a href="' + linkUpdate+'" style="color:white;">Update<a/></button><button id="update">'+
             '<a href="'+linkAssignDep +'"  style="color:white;">Assign Department<a/></button></div>';
     
