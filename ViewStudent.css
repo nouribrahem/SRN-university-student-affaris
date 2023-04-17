@@ -41,3 +41,7 @@ button#status, button#assign,button#update {
   border: none;
   border-radius: 5px;
 }
+
+button#status:hover, button#assign:hover,button#update:hover {
+  background-color: #0856a9;
+}
