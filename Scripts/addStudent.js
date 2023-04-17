@@ -10,6 +10,7 @@ function getData(){
   }
   students = arr;
 }
+getData();
 // Add a click event listener to the button
 addStudentButton.addEventListener('click', function () {
 
