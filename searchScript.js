@@ -68,9 +68,10 @@ function search(){
                 break;
             }    
         }
-        if(!isfound){
-            window.alert("no matches!");
-        }
+        
+    }
+    if(!isfound){
+        window.alert("No matches found!");
     }
     showSearch(found);
     
