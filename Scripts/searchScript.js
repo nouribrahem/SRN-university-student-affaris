@@ -1,10 +1,10 @@
-var arr=[];
+var arr1=[];
 
 function getData(){
     
     let data = window.localStorage.getItem("students");
     if(data != null){
-        arr =JSON.parse(data);
+        arr1 =JSON.parse(data);
     }
 }
 function getActive(){
@@ -95,12 +95,12 @@ function search(){
 function updateStatusInStorage(id, status) {
     getData();
 
-    for (let i = 0; i < arr.length; i++) {
-        if (id == arr[i].ID) {
-            arr[i].status = status;
+    for (let i = 0; i < arr1.length; i++) {
+        if (id == arr1[i].ID) {
+            arr1[i].status = status;
         }
     }
-    window.localStorage.setItem('students', JSON.stringify(arr));
+    window.localStorage.setItem('students', JSON.stringify(arr1));
 
 }
 function changeStatus(button) {
