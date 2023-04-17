@@ -8,7 +8,7 @@ arr2.push(
 
     {fname: "Mohamed",lname: "Hassan" , ID: "20202324", 
     status:"active", level: "2", dep:"Data Science",
-    DOB:"2000-04-05", phone_no:"0100666632",gpa:"3.1",
+    DOB:"2000-04-05", phone_no:"0100666632",GPA:"3.1",
     gender:"male",email:"mm@gmail.com"  }
     )
 window.localStorage.setItem('students', JSON.stringify(arr2));
@@ -25,9 +25,7 @@ function updateStatusInStorage(id, status) {
 
     for (let i = 0; i < arr.length; i++) {
         if (id == arr[i].ID) {
-            console.log('foundd')
             arr[i].status = status;
-            console.log(arr[i].status);
         }
     }
     window.localStorage.setItem('students', JSON.stringify(arr));
@@ -59,6 +57,7 @@ function showData(){
         var cell_4 = row.insertCell();
         var cell_5 = row.insertCell();
         var cell_6 = row.insertCell();
+        var cell_7 = row.insertCell();
         
         var linkAssignDep = "AssignDepartment.html?" + "name=" + (arr[i].fname+" "+arr[i].lname) + 
         "&id=" +arr[i].ID + "&level="+ arr[i].level + "&department=" + arr[i].dep;
@@ -68,7 +67,8 @@ function showData(){
         cell_3.innerHTML = arr[i].status;
         cell_4.innerHTML = arr[i].level;
         cell_5.innerHTML = arr[i].dep;
-        cell_6.innerHTML = '<div id="actions"><button id="status" onClick = "changeStatus(this)">Status</button><button id="assign">'+
+        cell_6.innerHTML = arr[i].GPA;
+        cell_7.innerHTML = '<div id="actions"><button id="status" onClick = "changeStatus(this)">Status</button><button id="assign">'+
         '<a href="' + linkUpdate+'" style="color:white;">Update<a/></button><button id="update">'+
         '<a href="'+linkAssignDep +'"  style="color:white;">Assign Department<a/></button></div>';
 
