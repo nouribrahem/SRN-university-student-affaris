@@ -5,11 +5,11 @@ function getActive(){
         arr =JSON.parse(data);
     }
     localStorage.arr = JSON.stringify(data);
-    arr = arr.filter((element)=>{return element.status=='active'});
+    arr = arr.filter((element)=>{return element.status=='Active'});
     return arr;
 }
 function showSearch(arr){
-    console.log(arr);
+    // console.log(arr);
     var tbl = document.getElementById("students");
     var table = document.getElementById("students");
     var rowCount = table.rows.length;
@@ -42,7 +42,7 @@ function showSearch(arr){
         }
         
     }
-    console.log(arr);
+    // console.log(arr);
 }
 
 
@@ -51,10 +51,16 @@ function search(){
     var arr = getActive();
     var isfound = false;
     var data = document.getElementById('searchbar').value;
+    var lowdata = data.toLowerCase();
+    
     if(/^[a-zA-Z]+$/.test(data))
     {
+        console.log(lowdata);
         for(var i =0;i<arr.length;i++){
-            if(data == arr[i].fname || data == arr[i].lname){
+            var lowfname = arr[i].fname.toLowerCase();
+            var lowlname = arr[i].lname.toLowerCase();
+            console.log(lowfname,lowlname, lowdata);
+            if(lowdata == lowfname || lowdata == lowlname){
                 found.push(arr[i]);
                 isfound = true;
             }    
