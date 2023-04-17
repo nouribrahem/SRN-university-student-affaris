@@ -43,12 +43,12 @@
 
         <!--GPA and Phone number -->
         <label for="GPA" style="left: 2px;" >GPA:</label><label for="phone_no" style="left:45px;">Mobile Number:</label><br><br>
-        <input type="GPA" id="GPA" name="GPA" class="txtboxStyle2" placeholder="GPA"  >&emsp;   
+        <input type="number" step = "0.1" min  = "0" max = "4"  id="GPA" name="GPA" class="txtboxStyle2" placeholder="GPA"  >&emsp;   
         <input type="tel" id="phone_no" name="phone_no" minlength="11"  class="txtboxStyle2" placeholder="01XX XXX XXXX"><br><br>
 
         <!--Level-->
         <label for="level">Level: </label> <label for="DOB" style="left:30px">Date of birth:</label><br><br>
-        <input id = "level"type=text list=levels class="txtboxStyle2" placeholder="Choose your level">
+        <input id = "level" list=levels class="txtboxStyle2" placeholder="Choose your level" type = "number" min = "1" max = "4">
         <datalist id=levels >
             <option> 1
             <option> 2
@@ -72,8 +72,8 @@
             <option label ="Decision Support" value="Decision Support">Decision Support</option>
             <option label ="Artificial Intelligence" value="Artificial Intelligence">Artificial Intelligence</option>
             <option label ="Software Engineering" value="Software Engineering">Software Engineering</option>
-            <option label ="Bionformatics" value="Bionformatics">Bioinformatics</option>
             <option label ="Data Science" value="Data Science">Data Science</option>
+            <option value="Bioinformatics"></option>
          </datalist> <br><br>
             
 

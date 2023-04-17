@@ -51,6 +51,7 @@ addStudentButton.addEventListener('click', function () {
   // Save to local storage
   console.log(students);
   window.localStorage.setItem('students', JSON.stringify(students));
+  alert("Student Added Successfully!");
 });
 
 
