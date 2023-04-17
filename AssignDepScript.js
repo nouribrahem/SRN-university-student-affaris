@@ -5,10 +5,12 @@ var Studname = data.get("name");
 var id = data.get("id");
 var level = data.get("level");
 var dep = data.get("department");
+var gpa = data.get("GPA");
 
 document.getElementById("id").value = id;
 document.getElementById("level").value = level;
 document.getElementById("name").value = Studname;
+document.getElementById("GPA").value = gpa;
 if (dep != null)
     document.getElementById("department").value = dep;
 

@@ -60,7 +60,7 @@ function showData(){
         var cell_7 = row.insertCell();
         
         var linkAssignDep = "AssignDepartment.html?" + "name=" + (arr[i].fname+" "+arr[i].lname) + 
-        "&id=" +arr[i].ID + "&level="+ arr[i].level + "&department=" + arr[i].dep;
+        "&id=" +arr[i].ID + "&level="+ arr[i].level + "&department=" + arr[i].dep+"&GPA=" +arr[i].GPA;;
         var linkUpdate = "UpdateStudent.html?" + "&id=" +arr[i].ID;
         cell_1.innerHTML = arr[i].fname+  " " + arr[i].lname;
         cell_2.innerHTML = arr[i].ID;
