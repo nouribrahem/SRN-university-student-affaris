@@ -4,14 +4,19 @@ function getActive(){
     if(data != null){
         arr =JSON.parse(data);
     }
-    // localStorage.arr = JSON.stringify(data);
+    localStorage.arr = JSON.stringify(data);
     arr = arr.filter((element)=>{return element.status=='active'});
     return arr;
-    
 }
 function showSearch(arr){
     console.log(arr);
     var tbl = document.getElementById("students");
+    var table = document.getElementById("students");
+    var rowCount = table.rows.length;
+
+    for (var i = rowCount - 1; i > 0; i--) {
+    table.deleteRow(i);
+    }
     if(tbl){
         for(let i = 0; i < arr.length; i++){
             var row = tbl.insertRow();
@@ -39,11 +44,12 @@ function showSearch(arr){
     }
     console.log(arr);
 }
-var found=[];
+
 
 function search(){
+    var found=[];
     var arr = getActive();
-    var isfound;
+    var isfound = false;
     var data = document.getElementById('searchbar').value;
     if(/^[a-zA-Z]+$/.test(data))
     {
