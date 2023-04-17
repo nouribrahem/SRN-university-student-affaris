@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="searchStyle.css">
+        
         <link rel="stylesheet" href="navStyle.css">
+        <link rel="stylesheet" href="ViewStudent.css">
+        <link rel="stylesheet" href="searchStyle.css">
     </head>
     <body>
         <header class = "headofpage">
@@ -35,5 +37,18 @@
         <button class= "submit" id="submit"type="submit"></button>
         </div>
         <div class="result" id="result"></div>
+
+        <table id="students">
+          <thead>
+              <th id="name">Name</th>
+              <th id="id">Id</th>
+              <th id="status">Status</th>
+              <th id="lvl">Level</th>
+              <th id="dep">Department</th>
+              <th id="action">Actions</th>
+          </thead>
+         </table>
+
+        <script src="searchScript.js"></script>
     </body>
 </html>

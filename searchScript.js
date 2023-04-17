@@ -1,68 +1,73 @@
-// //suggestion elements must be preceeded with sugg. list and function
-// const searchInput = document.querySelector(".search");
-// const input = searchInput.querySelector("input");
-// const resultBox = searchInput.querySelector(".result");
-// const icon = searchInput.querySelector(".submit");
-// let linkTag = searchInput.querySelector("a");
-// let webLink;
-
-const form = document.getElementById("form");
-const searchBar = document.getElementById("search");
-const submitButton = document.getElementById("submit");
-// const deleteButton = document.getElementById("delete");
-// const ul = document.getElementById("ul");
-let recentSearches;
-
-if (localStorage.recentSearches && localStorage.recentSearches != "") {
-  recentSearches = JSON.parse(localStorage.recentSearches);
-} else {
-  recentSearches = [];
-}
-
-const makeListItem = (text, parent) => {
-  let listItem = document.createElement("li");
-  listItem.textContent = text;
-  listItem.className = "list-group-item";
-  parent.appendChild(listItem);
-};
-
-recentSearches.forEach(element => {
-  makeListItem(element, ul);
-});
-
-const isDuplicateValue = (arr, text) => {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == text) {
-      return true;
+function getActive(){
+    
+    let data = window.localStorage.getItem("students");
+    if(data != null){
+        arr =JSON.parse(data);
     }
-  }
+    // localStorage.arr = JSON.stringify(data);
+    arr = arr.filter((element)=>{return element.status=='active'});
+    return arr;
+    
+}
+function showSearch(...arr){
+    // console.log(arr);
+    var tbl = document.getElementById("students");
+    if(tbl){
+        for(let i = 0; i < arr.length; i++){
+            var row = tbl.insertRow();
+            var cell_1 = row.insertCell();
+            var cell_2 = row.insertCell();
+            var cell_3 = row.insertCell();
+            var cell_4 = row.insertCell();
+            var cell_5 = row.insertCell();
+            var cell_6 = row.insertCell();
+            
+            var linkAssignDep = "AssignDepartment.html?" + "name=" + arr[i].name + 
+            "&id=" +arr[i].ID + "&level="+ arr[i].level + "&department=" + arr[i].department;
+            var linkUpdate = "UpdateStudent.html?" + "&id=" +arr[i].ID;
+            cell_1.innerHTML = arr[i].fname+  " " + arr[i].lname;
+            cell_2.innerHTML = arr[i].ID;
+            cell_3.innerHTML = arr[i].status;
+            cell_4.innerHTML = arr[i].level;
+            cell_5.innerHTML = arr[i].department;
+            cell_6.innerHTML = '<div id="actions"><button id="status">Status</button><button id="assign">'+
+            '<a href="' + linkUpdate+'" style="color:white;">Update<a/></button><button id="update">'+
+            '<a href="'+linkAssignDep +'"  style="color:white;">Assign Department<a/></button></div>';
+    
+        }
+        
+    }
+    console.log(arr);
+}
+var found=[];
 
-  return false;
-};
-
-form.addEventListener("submit", event => {
-  event.preventDefault();
-  if (
-    searchBar.value == "" ||
-    isDuplicateValue(recentSearches, searchBar.value)
-  ) {
-    return;
-  } else {
-    recentSearches.push(searchBar.value);
-    makeListItem(searchBar.value, ul);
-    localStorage.recentSearches = JSON.stringify(recentSearches);
-    searchBar.value = "";
-  }
-});
-
-deleteButton.addEventListener("click", () => {
-  localStorage.clear();
-  recentSearches = [];
-  searchBar.value = "";
-  // I use querySelectorAll because it returns a static collection
-  let arr = document.querySelectorAll("li");
-  // I use the static collection for iteration
-  for (let i = 0; i < arr.length; i++) {
-    arr[i].remove();
-  }
-});
+function search(){
+    var arr = getActive();
+    var isfound;
+    var data = document.getElementById('searchbar').value;
+    if(/^[a-zA-Z]+$/.test(data))
+    {
+        for(var i =0;i<arr.length;i++){
+            if(data == arr[i].fname || data == arr[i].lname){
+                found.push(arr[i]);
+                isfound = true;
+            }    
+        }  
+    }
+    else if(/^\d+$/.test(data)){
+        for(var i =0;i<arr.length;i++){
+            if(data == arr[i].ID){
+                found.push(arr[i]);
+                isfound = true;
+                break;
+            }    
+        }
+        if(!isfound){
+            window.alert("no matches!");
+        }
+    }
+    showSearch(found);
+    
+}
+// search();
+document.getElementById("submit").addEventListener("click", search);

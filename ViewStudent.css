@@ -26,7 +26,7 @@ table {
   border-collapse: collapse;
 }
 
-button {
+button#status, button#assign,button#update {
   background-color:#022851;
   margin: 10px 20px;
   padding: 10px 20px;
