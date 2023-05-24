@@ -4,4 +4,65 @@
         <h1>haha</h1>
         <p>haha haha hehe hehe</p>
     </body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Styles\ViewStudent.css">
+    <link rel="stylesheet" href="Styles\navStyle.css">
+    
+    <title>SRN-View Students</title>
+</head>
+<header class = "headofpage">
+        <a style= "padding: 10px;"; href="Home.html"><img src="Pictures\newlogo.png" style="width: 300px; height: 90px;padding: 20px;"/> </a>
+        <!-- <hr> -->
+         
+        
+        <div class ="navBar">
+          <ul class ="navList">
+            <li class="home"><a href="Home.html">Home </a></li> 
+            
+            <div class = "dropdown">
+              <li class="dropbtn">Students</li>
+              <div class="dropdown-content">
+                  <a href="ViewStudents.html">View students</a>
+                  <a href="AddStudent.html"> Add student </a>
+              </div>
+            </div>
+      
+            <li class ="s"><a href ="SearchStudent.html">Search</a></li>
+            <li class="logout"><a href="Login.html">  Log out</a></li>
+          </ul>
+        </div>
+          <!-- <hr> -->
+        </header>
+<body>
+   <table id="students">
+    <thead>
+        <th id="name">Name</th>
+        <th id="id">Id</th>
+        <th id="status">Status</th>
+        <th id="lvl">Level</th>
+        <th id="dep">Department</th>
+        <th id="action">GPA</th>
+        <th id="action">Actions</th>
+    </thead>
+    {%for x in students%}
+    <tr>
+        <td>{{x.name}}</td>
+        <td>{{x.id}}</td>
+        <td>{{x.status}}</td>
+        <td>{{x.level}}</td>
+        <td>{{x.department}}</td>
+        <td>{{x.gpa}}</td>
+        <!-- <td>
+            <button class="view" onclick="viewStudent({{x.id}})">View</button>
+            <button class="edit" onclick="editStudent({{x.id}})">Edit</button>
+            <button class="delete" onclick="deleteStudent({{x.id}})">Delete</button>
+        </td> -->
+    </tr>
+    {%endfor%}
+   </table>
+  <script src="Scripts\viewScript.js"></script>
+</body>
 </html>
