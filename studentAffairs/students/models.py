@@ -7,4 +7,3 @@ class Students(models.Model):
     level = models.IntegerField()
     department = models.CharField(max_length=20)
     gpa = models.DecimalField(max_digits=3,decimal_places=2)
-# Create your models here.

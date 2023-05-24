@@ -14,6 +14,6 @@ def index(request):
     student_list = Students.objects.all(). values()
     output = ""
     for x in student_list:
-        output += x["firstname"]
+        output += x["fname"]
         output+=" "
     return HttpResponse(output)  
