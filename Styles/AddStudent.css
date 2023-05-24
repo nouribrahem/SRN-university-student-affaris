@@ -73,6 +73,21 @@ input  {
     background-color: rgb(226, 229, 229);
 }
 
+
+select {
+    position : relative;
+    top: 5px;
+    border: 1.5px solid #022851;
+    border-radius: 6px;
+    outline: none;
+    width: 306px;
+    height: 34px;
+    background-color: rgb(226, 229, 229);
+}
+
+
+
+
 input:focus {
     border: 1.5px solid rgb(255, 191, 0);
     outline: none;

@@ -33,76 +33,81 @@
     <form  method="post" >
         <!--First name AND last name-->
         <label for="fname"style="left: 7px;" >First name:</label><label for="lname"style="left: 9px;">Last name:</label> <br><br>
-        <input type="text" id="fname" name="fname" class="txtboxStyle1" placeholder="First name">&emsp;
-        <input type="text" id="lname" name="lname" class ="txtboxStyle1"placeholder="Last name"><br><br>     
-        
-        <!--ID  and Email-->
-        <label for="ID" style="left: -36px;">ID:</label> <label for="email" style="left: 20px;">Email:</label><br><br> 
-        <input type="text" id="ID" name="ID" minlength="8" class="txtboxStyle2" placeholder="20XXXXXX">&emsp;        
-        <input type="email" id="email" name="email" class="txtboxStyle2" placeholder="Example@gmail.com"><br><br>
+        <input type="text" id="fname" name="fname" class="txtboxStyle1" placeholder="First name" required> 
+        <input type="text" id="lname" name="lname" class ="txtboxStyle1"placeholder="Last name" required><br><br>
 
-        <!--GPA and Phone number -->
+        
+        <!--ID and Email-->
+        <label for="ID" style="left: -36px;">ID:</label> <label for="email" style="left: 20px;">Email:</label><br><br> 
+        <input type="text" id="ID" name="ID" class="txtboxStyle2" placeholder="20XXXXXX" pattern="[0-9]{8}" required>&emsp;
+        <input type="email" name="email" id="email"  class="txtboxStyle2" placeholder="example1@***" required><br><br>
+
+        <!--GPA and Phone number-->
         <label for="GPA" style="left: 2px;" >GPA:</label><label for="phone_no" style="left:45px;">Mobile Number:</label><br><br>
-        <input type="number" step = "0.1" min  = "0" max = "4"  id="GPA" name="GPA" class="txtboxStyle2" placeholder="GPA"  >&emsp;   
-        <input type="tel" id="phone_no" name="phone_no" minlength="11"  class="txtboxStyle2" placeholder="01XX XXX XXXX"><br><br>
+        <input type="number" id="GPA" name="GPA" class="txtboxStyle2" min="0" max="4" placeholder="GPA" required>&emsp;   
+        <input type="text" name="phone number" id="phone number" class="txtboxStyle2" placeholder="01XX XXX XXXX" pattern="[0-9]{11}" required><br><br> 
+
+    
 
         <!--Level-->
         <label for="level">Level: </label> <label for="DOB" style="left:30px">Date of birth:</label><br><br>
-        <input id = "level" list=levels class="txtboxStyle2" placeholder="Choose your level" onchange="disableDepartment()">
-        <datalist id=levels >
-            <option> 1
-            <option> 2
-            <option> 3 
-            <option> 4
-        </datalist>&emsp;
+        <select name="level" id="level" class="txtboxStyle2" required>
+            <option value="">Choose your level</option>
+            <option value="1">1</option>
+            <option label ="2" value="2">2</option>
+            <option label ="3" value="3">3</option>
+            <option label ="4" value="4">4</option>
+        </select>&emsp;
+
+        
 
         <!--Date of birth-->
         
-        <input type="date" id="DOB" name="DOB" class="txtboxStyle2" placeholder="Date of birth"style="right:5px; height:34px" min="1999-01-01" max="2004-12-31"><br><br>
-        
-         <!--Level-->
+        <input type="date" id="DOB" name="DOB" class="txtboxStyle2" placeholder="Date of birth"style="right:1px;width: 303px; height:34px" min="1999-01-01" max="2004-12-31" required><br><br>
+
+         <!--Department-->
          <label for="deparment" style = "left: -150px;">Deparment: </label> <br><br>
-         <input id = "dep"type=text list=deps class="depart" placeholder="Choose deparment" style = "left: -165px;" >
-         <datalist id = deps>
-            <option value="">Select department</option>
-            <option value="General">General</option>
-            <option id = "cs" label ="Computer Science" value="Computer Science">Computer Science</option>
-            <option id = "is"label ="Information System" value="Information System">Information System</option>
-            <option id = "it"label ="Information Technology" value="Information Technology">Information Technology</option>
-            <option id = "ds"label ="Decision Support" value="Decision Support">Decision Support</option>
-            <option id="ai" label ="Artificial Intelligence" value="Artificial Intelligence">Artificial Intelligence</option>
-            <option id = "swe" label ="Software Engineering" value="Software Engineering">Software Engineering</option>
-            <option id = "dts"label ="Data Science" value="Data Science">Data Science</option>
-            <option id = "bio"value="Bioinformatics"></option>
-         </datalist> <br><br>
+         <select name="department"style = "left: -163px;" id="dep" class="txtboxStyle2" required>
+             <option value="">Select department</option>
+             <option value="General">General</option>
+             <option label ="Computer Science" value="Computer Science">Computer Science</option>
+             <option label ="Information System" value="Information System">Information System</option>
+             <option label ="Information Technology" value="Information Technology">Information Technology</option>
+             <option label ="Decision Support" value="Decision Support">Decision Support</option>
+             <option label ="Artificial Intelligence" value="Artificial Intelligence">Artificial Intelligence</option>
+             <option label ="Software Engineering" value="Software Engineering">Software Engineering</option>
+             <option label ="Bionformatics" value="Bionformatics">Bionformatics</option>
+             <option label ="Data Science" value="Data Science">Data Science</option>
+         </select><br><br>
             
 
        
         <!--Gender-->
-        <label for="g" style = "left: -165px;">Gender: </label><br><br><br>
+        <label for="gender" style = "left: -165px;">Gender: </label><br><br><br>
         &emsp;&ensp;
-        <input type="radio" id="male" name="gender" value="Male" class="radio">
+        <input type="radio" id="male" name="gender" value="Male" class="radio" required>
         <label for="gender" class="male">Male</label>&emsp;&emsp;
-        <input type="radio" id="female" name="gender" value="female">
+        <input type="radio" id="female" name="gender" value="female" required>
         <label for="gender" class="female">Female</label>
         <br>
+
+        
 
         <!--Status-->
         <label for="status" style = "left: -168px;">Status: </label><br><br><br> &emsp;&ensp;
 
-        <input type="radio" id="active" name="status" value="Active" class="radio">
+        <input type="radio" id="active" name="status" value="Active" class="radio" required>
         <label for="status" class="active">Active</label>&emsp;&emsp;
 
-        <input type="radio" id="inactive" name="status" value="Inactive" class="radio">
+        <input type="radio" id="inactive" name="status" value="Inactive" class="radio" required>
         <label for="status" class="inactive">Inactive</label>&emsp;&emsp;
         <br><br><br><br>
 
         <!--Submit and reset buttons-->
         <div class="btnStyle">
-            <input class="save"type="Save" value="Save" id="submit">&emsp;
+            <input class="save"type="submit" value="Save" id="submit">&emsp;
             <input class="reset"type="reset" value="Reset" ><br><br><br>
         </div>
-
         
         
 
