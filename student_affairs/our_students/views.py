@@ -70,3 +70,10 @@ def update_dep(request,id):
         stud.save()
         return JsonResponse({'message': 'Update successful'})
     return JsonResponse({'message': 'Invalid request'})
+def vieww(request):
+  our_students = students.objects.all().values()
+  template = loader.get_template('view.html')
+  context = {
+    'our_students': our_students,
+  }
+  return HttpResponse(template.render(context, request))

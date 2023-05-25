@@ -1,0 +1,47 @@
+table, th, td {
+    border: 2px solid#022851;
+    border-radius: 6px;
+    margin:20px;
+    background-color: #ffffff;
+  }
+  
+  table {
+    width: 75%;
+    border-radius: 6px;
+  }
+  
+  th {
+    height: 40px;
+    padding: 15px;
+    text-align: left;
+    /* background-color: #080849; */
+    color: #022851;
+  }
+  
+  td {
+    padding: 15px;
+    text-align: left;
+  }
+  table {
+    border-collapse: collapse;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    margin-top:5%px;
+  }
+  
+  button#status, button#assign,button#update {
+    background-color:#022851;
+    margin: 10px 20px;
+    padding: 10px 20px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button#status:hover, button#assign:hover,button#update:hover {
+    background-color: #0856a9;
+  }

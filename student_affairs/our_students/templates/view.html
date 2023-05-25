@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'styles/navStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/view.css' %}">
+    
+    <title>SRN-View Students</title>
+</head>
+<header class = "headofpage">
+        <a style= "padding: 10px;"; href="Home.html"><img src="{% static 'styles/pics/newlogo.png' %}" style="width: 300px; height: 90px;padding: 20px;"/> </a>
+        <!-- <hr> -->
+         
+        
+        <div class ="navBar">
+          <ul class ="navList">
+            <li class="home"><a href="Home.html">Home </a></li> 
+            
+            <div class = "dropdown">
+              <li class="dropbtn">Students</li>
+              <div class="dropdown-content">
+                  <a href="ViewStudents.html">View students</a>
+                  <a href="AddStudent.html"> Add student </a>
+              </div>
+            </div>
+      
+            <li class ="s"><a href ="SearchStudent.html">Search</a></li>
+            <li class="logout"><a href="Login.html">  Log out</a></li>
+          </ul>
+        </div>
+          <!-- <hr> -->
+        </header>
+<body>
+    <h1>Students</h1>
+    <table border="1">
+      <tr>
+        <th>Fname</th>
+        <th>Lname</th>
+        <th>Id</th>
+        <th>Status</th>
+        <th>Level</th>
+        <th>Department</th>
+        <th>GPA</th>
+      <!--  <th>Action</th> -->
+
+      </tr>
+        {% for x in our_students %}     
+          <tr>
+             <td> {{ x.fname }}</td>
+             <td>{{ x.lname }}</td>
+             <td>{{ x.id }}</td>
+             <td> {{ x.status}}</td>
+             <td>{{ x.level }}</td>
+              <td> {{ x.department }}</td>
+              <td>{{ x.gpa }}</td>     
+          </tr>
+        {% endfor %}
+      </table>
+  <!--<script src="{% static 'scripts/view.js' %}"></script>-->
+</body>
+</html>
