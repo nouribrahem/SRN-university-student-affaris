@@ -24,7 +24,7 @@ function updateDep() {
     else {
         var xhttp = new XMLHttpRequest();
         var csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-        xhttp.open('POST', '/students/update-department/' + id + '/', true);
+        xhttp.open('POST', '/our_students/update-department/' + id + '/', true);
         xhttp.setRequestHeader('Content-Type', 'application/json');
         xhttp.setRequestHeader('X-CSRFToken', csrfToken);
         xhttp.onreadystatechange = function () {
