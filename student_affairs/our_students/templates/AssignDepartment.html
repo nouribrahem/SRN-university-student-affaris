@@ -1,0 +1,93 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Departments-SRN</title>
+    <link rel="stylesheet" href="{% static 'styles/AssignDepartment.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/navStyle.css' %}">
+
+</head>
+
+<body>
+    <header class="headofpage">
+        <a style="padding: 10px;" ; href="Home.html"><img src="{% static 'styles/pics/newlogo.png'%}"
+                style="width: 300px; height: 90px;padding: 20px;" /> </a>
+        <!-- <hr> -->
+
+
+        <div class="navBar">
+            <ul class="navList">
+                <li class="home"><a href="Home.html">Home </a></li>
+
+                <div class="dropdown">
+                    <li class="dropbtn">Students</li>
+                    <div class="dropdown-content">
+                        <a href="ViewStudents.html">View students</a>
+                        <a href="AddStudent.html"> Add student </a>
+                    </div>
+                </div>
+
+                <li class="s"><a href="SearchStudent.html">Search</a></li>
+                <li class="logout"><a href="Login.html"> Log out</a></li>
+            </ul>
+        </div>
+        <!-- <hr> -->
+    </header>
+
+    <div id="Whole">
+
+        <form method="POST" id = "dep_form" >
+            {% csrf_token %}
+            <h1>Assign Department</h1>
+            <!--name-->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" class="fixed-input" placeholder="Name" value="{{content.name}}"
+                readonly><br>
+
+            <!--ID-->
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="studId" placeholder="202XXXXX" class="fixed-input" value="{{content.id}}"
+                readonly><br>
+
+
+            <!--GPA-->
+            <label for="GPA">GPA:</label>
+            <input type="text" id="GPA" name="studGpa" placeholder="GPA" class="fixed-input" value="{{content.gpa}}"
+                readonly><br>
+
+
+            <!--Level-->
+            <label for="level">Level:</label>
+            <input type="text" id="level" name="studLevel" placeholder="Level" class="fixed-input" value="{{content.level}}"
+                readonly><br>
+            
+
+            <!--Department-->
+            <label for="department">Department:</label>
+            <select id="department" class="select-style">
+                {% for option in department_options %}
+                    {% if option == department %}
+                        <option value="{{ option }}" selected>{{ option }}</option>
+                    {% else %}
+                        {% if option != 'General' %}
+                            <option value="{{ option }}">{{ option }}</option>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+             
+            </select>
+
+            <br>
+            <button type="submit" onclick="updateDep()">Submit</button>
+            <script src="{% static 'scripts/AssignDepScript.js' %}"></script>
+
+        </form> 
+        <br><br>
+        <div id="message"></div> 
+    </div>
+
+
+</body>
+
+</html>

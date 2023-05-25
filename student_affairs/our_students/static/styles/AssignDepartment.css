@@ -1,0 +1,113 @@
+h1 {
+    /* display: flex; */
+    text-align: center;
+    padding: 5px 15px 15px 15px;
+    position: relative;
+    left: 3px;
+    top: 20px;
+    color: #022851;
+    font-family: ProximaNova, sans-serif;
+}
+
+button {
+    background-color: #022851;
+    margin: 10px 20px;
+    padding: 10px 20px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0856a9;
+}
+
+#Whole {
+    width: 400px;
+    height: 750px;
+    position: relative;
+    border: 2px solid #022851;
+    border-radius: 10px;
+    margin-top: 100px;
+    padding-bottom: 20px;
+    margin: 40px auto;
+    position: relative;
+    background-color: #f7f7f7;
+}
+
+.fixed-input {
+    background-color: rgb(226, 229, 229);
+    border: 1.5px solid #022851;
+    border-radius: 6px;
+    /* border-bottom: 1px solid #ccc; */
+    padding: 5px;
+    font-size: 1.1em;
+    background-color: rgb(226, 229, 229);
+}
+
+input {
+    width: 300px;
+    height: 30px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    
+    font-size: 16px;
+    
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+    font-family: ProximaNova, sans-serif;
+    position: relative;
+    /* text-align: right; */
+    padding: 15px 5px;
+    top: 5px;
+    left: 1px;
+    right: 129px;
+    color: #022851;
+    font-size: 15px;
+    margin-right: 25px;
+    margin-left: 10px;
+}
+input:disabled:hover {
+    cursor: not-allowed;
+  }
+  
+.select-style {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+  }
+  
+  .select-style option {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .select-style:hover, .select-style:focus {
+    cursor: pointer;
+    border-color: #666;
+  }
+  input:focus {
+    border: 1.5px solid rgb(255, 191, 0);
+    outline: none;
+}
+
+#message {
+  position: fixed;
+  display : none;
+}
