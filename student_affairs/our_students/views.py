@@ -77,3 +77,7 @@ def vieww(request):
     'our_students': our_students,
   }
   return HttpResponse(template.render(context, request))
+
+def update_student(request):
+    template = loader.get_template('UpdateStudent.html')
+    return HttpResponse(template.render())

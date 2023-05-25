@@ -6,5 +6,6 @@ urlpatterns = [
     path('assign_dep/<str:id>',views.assign_dep),
     path('update-department/<str:id>/',views.update_dep),
     # عايزين نجرب بعد كدا لو هينفع نغير اول اسم ارجيومينت
-    path('add_studentfun/', views.add_studentfun, name='add_studentfun')
+    path('add_studentfun/', views.add_studentfun, name='add_studentfun'),
+    path('update_student/', views.update_student, name='update_student')
 ]
