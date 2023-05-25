@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from django.views.decorators.csrf import csrf_protect
 from .models import students
 from django.http import JsonResponse
 import json
@@ -8,17 +9,41 @@ import json
 #     return HttpResponse("Hello, world. You're at the students index.")
 # Create your views here.
 
-# def index(request):
-#     template = loader.get_template('haha.html')
-#     return HttpResponse(template.render())
-
 def index(request):
-    student_list = students.objects.all(). values()
-    output = ""
-    for x in student_list:
-        output += x["fname"]
-        output+=" "
-    return HttpResponse(output)
+    template = loader.get_template('addStudent.html')
+    return HttpResponse(template.render())
+
+def add_studentfun(request):
+    if request.method == "POST":
+        fname = request.POST['fname']
+        lname = request.POST['lname']
+        ID = request.POST['ID']
+        email = request.POST['email']
+        GPA = request.POST['GPA']
+        phone_number = request.POST['phone_number']
+        level = request.POST['level']
+        dob = request.POST['DOB']
+        department = request.POST['department']
+        gender = request.POST['gender']
+        status = request.POST['status']
+        
+        student = students(
+            first_name=fname,
+            last_name=lname,
+            student_id=ID,
+            email=email,
+            gpa=GPA,
+            phone_number=phone_number,
+            level=level,
+            date_of_birth=dob,
+            department=department,
+            gender=gender,
+            status=status
+        )
+        student.save()
+        return render(request, 'addStudent.html')
+    else:
+        return  render(request, 'addStudent.html')
 
 def assign_dep(request,id):
     student_info = students.objects.get(id=id)
