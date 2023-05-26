@@ -78,6 +78,43 @@ def vieww(request):
   }
   return HttpResponse(template.render(context, request))
 
-def update_student(request):
+def update_student(request, id):
+    
+    if request.method == "POST":
+        fname = request.POST['fname']
+        lname = request.POST['lname']
+        
+        #email = request.POST['email']
+        GPA = request.POST['GPA']
+        #phone_number = request.POST['phone_number']
+        level = request.POST['level']
+        #dob = request.POST['DOB']
+        #gender = request.POST['gender']
+        student = students.objects.get(id = id)
+        
+        student.fname =fname
+        student.lname =lname
+        #student.email=email
+        student.gpa = GPA
+        #student.phone_number=phone_number  
+        student.level=level
+        #student.dob = dob
+        #student.gender = gender
+        student.save()
+    
     template = loader.get_template('UpdateStudent.html')
-    return HttpResponse(template.render())
+    stud = students.objects.get(id=id)
+    context = {
+            'our_students': stud,
+        }
+    return HttpResponse(template.render(context, request))
+    
+
+
+    
+            
+
+
+        
+    
+

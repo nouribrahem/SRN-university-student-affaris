@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-
+{%load static%}
 <head>
-  <link rel="stylesheet" type="text/css" href="Styles\UpdateStrudentStyle.css">
-  <link rel="stylesheet" href="Styles\navStyle.css">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles\UpdateStrudentStyle.css' %}">
+  <link rel="stylesheet" href="{% static 'styles\navStyle.css' %}">
 </head>
 
 <body>
   <header class="headofpage">
-    <a style="padding: 10px;" ; href="Home.html"><img src="Pictures\newlogo.png"
+    <a style="padding: 10px;" ; href="Home.html"><img src="{% static 'Styles\pics\newlogo.png'%} " alt = "backgroud"
         style="width: 300px; height: 90px;padding: 20px;" /> </a>
     <!-- <hr> -->
     <div class="navBar">
@@ -32,28 +33,29 @@
   <div class="Whole">
     <br><br>
     <h1 id="Update_student" style="text-align: center;">Update student information</h1><br><br><br><br>
-    <form id="form" method="GET">
+    <form id="form" method="POST" >
+    {% csrf_token %}
       <!--First name AND last name-->
       <label for="fname" style="left: 7px;">First name:</label><label for="lname" style="left: 9px;">Last name:</label>
       <br><br>
-      <input type="text" id="fname" name="fname" class="txtboxStyle1" placeholder="First name" value="">&emsp;
-      <input type="text" id="lname" name="lname" class="txtboxStyle1" placeholder="Last name" value=""><br><br>
+      <input type="text" id="fname" name="fname" class="txtboxStyle1" placeholder="First name" value="{{our_students.fname}}">&emsp;
+      <input  type="text" id="lname" name="lname" class="txtboxStyle1" placeholder="Last name" value="{{our_students.lname}}"><br><br>
 
       <!--ID  and Email-->
       <label for="ID" style="left: -36px;">ID:</label> <label for="email" style="left: 20px;">Email:</label><br><br>
-      <input type="text" id="ID" name="ID" minlength="8" class="txtboxStyle2" placeholder="20XXXXXX" value="">&emsp;
-      <input type="email" id="email" name="email" class="txtboxStyle2" placeholder="Example@gmail.com" value=""><br><br>
+      <input type="text" id="ID" name="ID" minlength="8" class="txtboxStyle2" placeholder="20XXXXXX" disabled value="{{our_students.id}}">&emsp;
+      <input type="email" id="email" name="email" class="txtboxStyle2" placeholder="Example@gmail.com" value="{{our_students.email}}"><br><br>
 
       <!--GPA and Phone number -->
       <label for="GPA" style="left: 2px;">GPA:</label><label for="phone_no" style="left:45px;">Mobile
         Number:</label><br><br>
-      <input type="number" min = "0" max = "4" step = "0.1" id="GPA" name="GPA" class="txtboxStyle2" placeholder="GPA" value="">&emsp;
+      <input type="number" min = "0" max = "4" step = "0.1" id="GPA" name="GPA" class="txtboxStyle2" placeholder="GPA" value="{{our_students.gpa}}">&emsp;
       <input type="tel" id="phone_no" name="phone_no" minlength="11" class="txtboxStyle2" placeholder="01XX XXX XXXX"
         value=""><br><br>
 
       <!--Level-->
       <label for="level">Level: </label> <label for="DOB" style="left:30px">Date of birth:</label><br><br>
-      <input type=text name = "level"list="level" id="level" class="txtboxStyle2" placeholder="Choose your level" value="">
+      <input type=text name = "level"list="level" id="level" class="txtboxStyle2" placeholder="Choose your level" value="{{our_students.level}}">
       <datalist id="level">
         <option> 1
         <option> 2
@@ -69,7 +71,7 @@
       <!--Deparment-->
       <label for="dep" style="left:-155px">Deparment: </label> <br><br>
       <input type="text" list="depart" id="dep" name="department" placeholder="Deparment"
-        style="left:-165px; height:34px;" disabled><br><br>
+        style="left:-165px; height:34px;" disabled value="{{our_students.department}}"><br><br>
       <datalist id="depart">
         <option>Select department
         <option value="">General
@@ -85,19 +87,19 @@
       <!--Gender-->
       <label for="g" style="left: -165px;">Gender: </label><br><br><br>
       &emsp;&emsp;
-      <input type="radio" id="male" name="gender" value="Male" class="radio">
+      <input type="radio" id="male" name="gender" value="Male" class="radio" 
+      
+      >
       <label for="gender" class="male">Male</label>&emsp;&emsp;
       <input type="radio" id="female" name="gender" value="Female">
       <label for="gender" class="female">Female</label>
       <br><br><br><br>
-
 
       <!--Submit and delete buttons-->
       <div class="btnStyle">
         <input type="submit" value="Update">&emsp;
         <input type="button" value="Delete" class="delete-button"><br><br><br>
       </div>
-
 
 
 
@@ -108,3 +110,4 @@
 </body>
 
 </html>
+
