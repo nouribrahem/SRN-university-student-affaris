@@ -108,6 +108,5 @@ input:disabled:hover {
 }
 
 #message {
-  position: fixed;
   display : none;
 }

@@ -16,36 +16,35 @@ def index(request):
     return HttpResponse(template.render())
 
 def add_studentfun(request):
-    if request.method == "POST":
-        fname = request.POST['fname']
-        lname = request.POST['lname']
-        ID = request.POST['ID']
-        email = request.POST['email']
-        GPA = request.POST['GPA']
-        phone_number = request.POST['phone_number']
-        level = request.POST['level']
-        dob = request.POST['DOB']
-        department = request.POST['department']
-        gender = request.POST['gender']
-        status = request.POST['status']
+        First_name = request.POST['fname']
+        Last_name = request.POST['lname']
+        Student_id = request.POST['ID']
+        #Student_email = request.POST['email']
+        Student_gpa = request.POST['GPA']
+        #Student_phone = request.POST['phone_number']
+        Student_level = request.POST['level']
+        #Student_dob = request.POST['DOB']
+        Student_dep = request.POST['department']
+        #Student_gender = request.POST['gender']
+        Student_status = request.POST['status']
         
         student = students(
-            first_name=fname,
-            last_name=lname,
-            student_id=ID,
-            email=email,
-            gpa=GPA,
-            phone_number=phone_number,
-            level=level,
-            date_of_birth=dob,
-            department=department,
-            gender=gender,
-            status=status
+            student = students(
+            fname=First_name,
+            lname=Last_name,
+            id=Student_id,
+            #email=Student_email,
+            gpa=Student_gpa,
+            #phone_number=Student_phone,
+            level=Student_level,
+            #date_of_birth=Student_dob,
+            department=Student_dep,
+            #gender=Student_gender,
+            status=Student_status
+        )
         )
         student.save()
-        return render(request, 'addStudent.html')
-    else:
-        return  render(request, 'addStudent.html')
+        return JsonResponse({'message': 'Update successful'})
 
 def assign_dep(request,id):
     student_info = students.objects.get(id=id)
@@ -72,6 +71,7 @@ def update_dep(request,id):
         stud.save()
         return JsonResponse({'message': 'Update successful'})
     return JsonResponse({'message': 'Invalid request'})
+
 def vieww(request):
   our_students = students.objects.all().values()
   template = loader.get_template('view.html')
@@ -131,11 +131,4 @@ def search(request):
 #     query = query_dict.get("query")
 #     student = students.objects.get(id=id)
 #     status = students.objects.update(status=F('')) 
-
-    
-            
-
-
-        
-    
 
