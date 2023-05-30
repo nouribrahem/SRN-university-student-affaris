@@ -1,0 +1,66 @@
+.search{
+    margin-left: 30%;
+    /* margin-right: 25%; */
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border: 1.5px solid #022851;
+    border-radius: 6px;
+    width: 600px;
+    height: 47px;
+    background-color: white;
+}
+.searchbar::placeholder{
+    color: #022851;
+    font-size: large;
+}
+.searchbar  {
+    width: 90%;
+    position : relative;
+    /* border: 1.5px solid #022851; */
+    /* border-radius: 6px; */
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    height: 45px;
+    padding-right: 0%;
+    /* padding-left: 0%;
+    padding-left: 0%;
+    padding-left: 0%; */
+    /* background: none; */
+}
+
+.search:focus {
+    border: 1.5px solid rgb(255, 191, 0);
+    outline: none;
+}
+.search:hover {
+    border: 1.5px solid rgb(255, 191, 0);
+    outline: none;
+}    
+
+  button[type="submit"]:hover {
+    opacity: 1;
+  }
+
+  button[type="submit"] {
+    text-indent: -999px;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+    padding-top: 13px;
+    padding-right: 13px;
+    padding-bottom: 13px;
+    padding-left: 0px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    /* border: 1.5px solid #022851; */
+    /* border-radius: 6px; */
+    background: transparent url("pics/searchlogo.png") no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    opacity: 0.7;
+    /* border-left: none;*/
+    border: none; 
+    float: right;
+}
