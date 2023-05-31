@@ -17,7 +17,11 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 def index(request):
-    template = loader.get_template('addStudent.html')
+    template = loader.get_template('Home.html')
+    return HttpResponse(template.render())
+
+def exit(request):
+    template = loader.get_template('NewHomePage.html')
     return HttpResponse(template.render())
 
 

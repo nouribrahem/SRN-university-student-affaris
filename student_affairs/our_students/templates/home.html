@@ -1,32 +1,34 @@
 <!Doctype Html>
+{%load static %}
 <Html>   
-<Head>    
-  <Title>SRN Student Affairs </Title>
-  <link rel="stylesheet" href="Styles\navStyle.css">
+<Head> 
+  {% block title%}
+    <Title>SRN Student Affairs </Title>
+  {% endblock %}
 
-  <link rel="icon" type="image/png" href="tablogo.png">
-  
+  <link rel="stylesheet" href="{% static 'styles/navStyle.css' %}">
+  <link rel="icon" type="image/png" href="{% static 'styles/pics/tablogo.png'%}">
+  {% block links %}
+  {% endblock %}
 </Head>
 <div style= "background-color: #ffffff;">
   <header class = "headofpage">
-    <a style= "padding: 10px;"; href="Home.html"><img src="Pictures\newlogo.png" style="width: 300px; height: 90px;padding: 20px;"/> </a>
-    <!-- <hr> -->
-     
-    
+    <a style= "padding: 10px;"; href="/our_students/"><img src="{% static 'styles/pics/newlogo.png' %}" style="width: 300px; height: 90px;padding: 20px;"/> </a>
+    <!-- <hr> -->   
     <div class ="navBar">
       <ul class ="navList">
-        <li class="home"><a href="Home.html">Home </a></li> 
+        <li class="home"><a href="/our_students/">Home </a></li> 
         
         <div class = "dropdown">
           <li class="dropbtn">Students</li>
           <div class="dropdown-content">
-              <a href="ViewStudents.html">View students</a>
-              <a href="AddStudent.html"> Add student </a>
+              <a href="/our_students/vieww/">View students</a>
+              <a href="/our_students/add_studentfun/"> Add student </a>
           </div>
         </div>
   
-        <li class ="s"><a href ="SearchStudent.html">Search</a></li>
-        <li class="logout"><a href="Login.html">  Log out</a></li>
+        <li class ="s"><a href ="/our_students/search/">Search</a></li>
+        <li class="logout"><a href="/our_students/exit/">Exit</a></li>
       </ul>
     </div>
       <!-- <hr> -->
@@ -34,6 +36,8 @@
 </div>
 
 <Body>  
+  {% block content%}
+  {% endblock%}
 </Body> 
 </Html>
 

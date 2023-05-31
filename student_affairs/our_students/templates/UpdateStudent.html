@@ -1,35 +1,15 @@
+{% extends "home.html" %}
+{%load static%}
 <!DOCTYPE html>
 <html>
-{%load static%}
 <head>
-  <meta charset="utf-8">
+  {%block links%}
   <link rel="stylesheet" type="text/css" href="{% static 'styles\UpdateStrudentStyle.css' %}">
-  <link rel="stylesheet" href="{% static 'styles\navStyle.css' %}">
+  {% endblock %}
 </head>
 
 <body>
-  <header class="headofpage">
-    <a style="padding: 10px;" ; href="Home.html"><img src="{% static 'Styles\pics\newlogo.png'%} " alt = "backgroud"
-        style="width: 300px; height: 90px;padding: 20px;" /> </a>
-    <!-- <hr> -->
-    <div class="navBar">
-      <ul class="navList">
-        <li class="home"><a href="Home.html">Home </a></li>
-
-        <div class="dropdown">
-          <li class="dropbtn">Students</li>
-          <div class="dropdown-content">
-            <a href="ViewStudents.html">View students</a>
-            <a href="AddStudent.html"> Add student </a>
-          </div>
-        </div>
-
-        <li class="s"><a href="SearchStudent.html">Search</a></li>
-        <li class="logout"><a href="Login.html"> Log out</a></li>
-      </ul>
-    </div>
-    <!-- <hr> -->
-  </header>
+  {%block content%}
   <div class="Whole">
     <br><br>
     <h1 id="Update_student" style="text-align: center;">Update student information</h1><br><br><br><br>
@@ -105,8 +85,7 @@
 
     </form>
   </div>
-  <script src="Scripts\updateStudent.js"></script>
-
+  {%endblock%}
 </body>
 
 </html>
