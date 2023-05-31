@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'student_affairs.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'C:\\Users\\DELL\\Documents\\GitHub\\Student-Affairs-website\\student_affairs\\db.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
