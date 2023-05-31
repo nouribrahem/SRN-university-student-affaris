@@ -1,10 +1,15 @@
 from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.http import HttpResponse
 from django.template import loader
 from django.views.decorators.csrf import csrf_protect
 from .models import students
 from django.http import JsonResponse
 import json
+from django.views.decorators.csrf import csrf_exempt
+
+@csrf_exempt
 # def index(request):
 #     return HttpResponse("Hello, world. You're at the students index.")
 # Create your views here.
@@ -13,36 +18,76 @@ def index(request):
     template = loader.get_template('addStudent.html')
     return HttpResponse(template.render())
 
+
 def add_studentfun(request):
-        First_name = request.POST['fname']
-        Last_name = request.POST['lname']
-        Student_id = request.POST['ID']
-        #Student_email = request.POST['email']
-        Student_gpa = request.POST['GPA']
-        #Student_phone = request.POST['phone_number']
-        Student_level = request.POST['level']
-        #Student_dob = request.POST['DOB']
-        Student_dep = request.POST['department']
-        #Student_gender = request.POST['gender']
-        Student_status = request.POST['status']
+    if request.method == 'POST':
+        fname = request.POST.get('fname')
+        lname = request.POST.get('lname')
+        ID = request.POST.get('ID')
+        email = request.POST.get('email')
+        GPA = request.POST.get('GPA')
+        phone_number = request.POST.get('phone_number')
+        level = request.POST.get('level')
+        DOB = request.POST.get('DOB')
+        department = request.POST.get('department')
+        gender = request.POST.get('gender')
+        status = request.POST.get('status')
+
         
+
         student = students(
-            student = students(
-            fname=First_name,
-            lname=Last_name,
-            id=Student_id,
-            #email=Student_email,
-            gpa=Student_gpa,
-            #phone_number=Student_phone,
-            level=Student_level,
-            #date_of_birth=Student_dob,
-            department=Student_dep,
-            #gender=Student_gender,
-            status=Student_status
-        )
+            fname=fname,
+            lname=lname,
+            ID=ID,
+            email=email,
+            GPA=GPA,
+            phone_number=phone_number,
+            level=level,
+            DOB=DOB,
+            department=department ,
+            gender=gender,
+            status=status
         )
         student.save()
-        return JsonResponse({'message': 'Update successful'})
+    template = loader.get_template('addStudent.html')
+    stud = students.objects.get(id=id)
+    context = {
+            'our_students': stud,
+        }
+    return HttpResponse(template.render(context, request))    
+
+
+
+# def add_studentfun(request):
+#         First_name = request.POST['fname']
+#         Last_name = request.POST['lname']
+#         Student_id = request.POST['ID']
+#         #Student_email = request.POST['email']
+#         Student_gpa = request.POST['GPA']
+#         #Student_phone = request.POST['phone_number']
+#         Student_level = request.POST['level']
+#         #Student_dob = request.POST['DOB']
+#         Student_dep = request.POST['department']
+#         #Student_gender = request.POST['gender']
+#         Student_status = request.POST['status']
+        
+#         student = students(
+#             student = students(
+#             fname=First_name,
+#             lname=Last_name,
+#             id=Student_id,
+#             #email=Student_email,
+#             gpa=Student_gpa,
+#             #phone_number=Student_phone,
+#             level=Student_level,
+#             #date_of_birth=Student_dob,
+#             department=Student_dep,
+#             #gender=Student_gender,
+#             status=Student_status
+#         )
+#         )
+#         student.save()
+#         return JsonResponse({'message': 'Added successful'})
 
 def assign_dep(request,id):
     student_info = students.objects.get(id=id)

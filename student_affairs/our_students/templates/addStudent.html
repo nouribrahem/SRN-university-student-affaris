@@ -43,7 +43,7 @@
       <br /><br />
       <h1 id="AddStudent" style="text-align: center">Add Student</h1>
       <br /><br /><br /><br />
-      <form action="add_studentfun/" method="post">
+      <form method="post">
         {% csrf_token %}
         <!--First name AND last name-->
         <label for="fname" style="left: 7px">First name:</label
@@ -226,6 +226,5 @@
         </div>
       </form>
     </div>
-    <script type="text/javascript" src="Scripts\addStudent.js"></script>
   </body>
 </html>
