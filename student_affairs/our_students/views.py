@@ -168,10 +168,14 @@ def search(request):
     context={"student":student}
     return render(request,"SearchStudent.html", context=context)
 
-
+@csrf_exempt
 def status_change(request,id): 
-    dict = json.loads(request.body)
-    student = students.objects.get(id=id)
-    student.status = dict.get('status')
-    student.save()
-    return JsonResponse({'message':'status changed!'})
+    if request.method == 'POST':
+        dict = json.loads(request.body)
+        student = students.objects.get(id=id)
+        student.status = dict.get(dict['status'])
+        print(dict)
+        student.save()
+        return JsonResponse({'message':'status changed!'})
+    return JsonResponse({'message':'Invalid request'})
+    

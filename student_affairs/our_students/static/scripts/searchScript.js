@@ -5,7 +5,7 @@ function updateStatusInStorage(id, status) {
     var xhttp = new XMLHttpRequest();
     var csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
     console.log(csrfToken);
-    xhttp.open('GET', '/our_students/update_status/' + id + '/', true);
+    xhttp.open('POST', '/our_students/update_status/' + id + '/', true);
     xhttp.setRequestHeader('Content-Type', 'application/json');
     xhttp.setRequestHeader('X-CSRFToken', csrfToken);
     xhttp.onreadystatechange = function () {
@@ -14,6 +14,7 @@ function updateStatusInStorage(id, status) {
         }
     };
     var dict = {'id':id, 'status':status};
+    console.log(dict);
     xhttp.send(JSON.stringify(dict));
 }
 function changeStatus() {
@@ -30,6 +31,7 @@ function changeStatus() {
     } else {
         statusCell.innerHTML = "Active"; // change the status back
     }
+    console.log(statusCell.innerHTML);
     // updateStatusInStorage(idCell.innerHTML, statusCell.innerHTML);
     updateStatusInStorage(idCell.innerHTML,statusCell.innerHTML);
 }
