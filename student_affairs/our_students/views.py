@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render 
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import HttpResponse
@@ -22,6 +22,7 @@ def index(request):
 
 
 def add_studentfun(request):
+    print("hello")
     if request.method == 'POST':
         fname = request.POST.get('fname')
         lname = request.POST.get('lname')
@@ -35,28 +36,28 @@ def add_studentfun(request):
         gender = request.POST.get('gender')
         status = request.POST.get('status')
 
-        
-
         student = students(
             fname=fname,
             lname=lname,
-            ID=ID,
+            id=ID,
             email=email,
-            GPA=GPA,
-            phone_number=phone_number,
+            gpa=GPA,
+            phone=phone_number,
             level=level,
-            DOB=DOB,
+            dob=DOB,
             department=department ,
             gender=gender,
             status=status
-        )
+    )
+        print(student)
         student.save()
     template = loader.get_template('addStudent.html')
-    stud = students.objects.get(id=id)
     context = {
-            'our_students': stud,
-        }
-    return HttpResponse(template.render(context, request))    
+        'message': 'Update successful',
+    }
+
+    # Render the template with the context and return the response
+    return render(request, 'addStudent.html', context)
 
 
 
