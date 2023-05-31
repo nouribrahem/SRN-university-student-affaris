@@ -34,29 +34,31 @@
 <body>
     <h1>Students</h1>
     <table border="1">
-      <tr>
-        <th>Fname</th>
-        <th>Lname</th>
-        <th>Id</th>
-        <th>Status</th>
-        <th>Level</th>
-        <th>Department</th>
-        <th>GPA</th>
-      <!--  <th>Action</th> -->
-
-      </tr>
+      <thead>
+        <th id="name">Name</th>
+        <th id="id">Id</th>
+        <th id="status">Status</th>
+        <th id="lvl">Level</th>
+        <th id="dep">Department</th>
+        <th id="gpa">GPA</th>
+        <th id="actions">Actions</th>
+      </thead>
         {% for x in our_students %}     
           <tr>
-             <td> {{ x.fname }}</td>
-             <td>{{ x.lname }}</td>
+             <td> {{ x.fname }}{{x.lname}}</td>
              <td>{{ x.id }}</td>
              <td> {{ x.status}}</td>
              <td>{{ x.level }}</td>
-              <td> {{ x.department }}</td>
-              <td>{{ x.gpa }}</td>     
+            <td> {{ x.department }}</td>
+            <td>{{ x.gpa }}</td>     
+            <td>
+              <button class="status" type="submit" onclick=changeStatus()>{{x.status}}</button>
+              <button class="update" type="submit" onclick="update()">Update</button>
+              <button class="dep" type="submit" onclick="department()">Assign Department</button>
+            </td>
           </tr>
         {% endfor %}
       </table>
-  <!--<script src="{% static 'scripts/view.js' %}"></script>-->
+  <script src="{% static 'scripts\searchScript.js' %}"></script>
 </body>
 </html>

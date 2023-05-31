@@ -42,7 +42,7 @@
     opacity: 1;
   }
 
-  button[type="submit"] {
+  #lens {
     text-indent: -999px;
     overflow: hidden;
     width: 30px;

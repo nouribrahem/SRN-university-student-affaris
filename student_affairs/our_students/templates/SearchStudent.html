@@ -35,7 +35,7 @@
         <div class="search" id="search">
           <form method='GET'>
           <input name="query"class="searchbar" id="searchbar"type="text" placeholder="Search..">
-          <button class= "submit" id="submit"type="submit"></button>
+          <button class= "submit" id="lens"type="submit"></button>
           </form>
         </div>
         <div class="result" id="result"></div>
@@ -61,14 +61,14 @@
               <td> {{ x.department }}</td>
               <td>{{ x.gpa }}</td>     
               <td>
-                <button class="status" id="status" onclick="window.location.href='/{{id}}/'">{{x.status}}</button>
-                <button class="update" id="update">Update</button>
-                <button class="dep" id="assign">Assign Department</button>
+                <button class="status" type="submit" onclick=changeStatus()>{{x.status}}</button>
+                <button class="update" type="submit" onclick="update()">Update</button>
+                <button class="dep" type="submit" onclick="department()">Assign Department</button>
               </td>
           </tr>
         {% endfor %}
          </table>
 
-        <!-- <script src="Scripts\searchScript.js"></script> -->
+        <script src="{% static 'scripts\searchScript.js' %}"></script>
     </body>
 </html>

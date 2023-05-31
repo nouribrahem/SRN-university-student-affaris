@@ -132,22 +132,22 @@ def update_student(request, id):
         fname = request.POST['fname']
         lname = request.POST['lname']
         
-        #email = request.POST['email']
-        GPA = request.POST['GPA']
-        #phone_number = request.POST['phone_number']
+        email = request.POST['email']
+        GPA = request.POST['gpa']
+        phone_number = request.POST['phone']
         level = request.POST['level']
-        #dob = request.POST['DOB']
-        #gender = request.POST['gender']
+        dob = request.POST['dob']
+        gender = request.POST['gender']
         student = students.objects.get(id = id)
         
         student.fname =fname
         student.lname =lname
-        #student.email=email
+        student.email=email
         student.gpa = GPA
-        #student.phone_number=phone_number  
+        student.phone=phone_number  
         student.level=level
-        #student.dob = dob
-        #student.gender = gender
+        student.dob = dob
+        student.gender = gender
         student.save()
     
     template = loader.get_template('UpdateStudent.html')
@@ -163,18 +163,15 @@ def search(request):
     student = None
     print(query)
     if query is not None:
-        # if query.isnumeric():
-        #     student = students.objects.filter(id=query)
-        # elif query.isalpha():
         student = students.objects.filter(Q(fname=query)|Q(lname=query)|Q(id=query))
-            # student = students.objects.filter(lname=query)
     print(student)
     context={"student":student}
     return render(request,"SearchStudent.html", context=context)
 
-# def status_change(request,id): 
-#     query_dict = request.GET
-#     query = query_dict.get("query")
-#     student = students.objects.get(id=id)
-#     status = students.objects.update(status=F('')) 
 
+def status_change(request,id): 
+    dict = json.loads(request.body)
+    student = students.objects.get(id=id)
+    student.status = dict.get('status')
+    student.save()
+    return JsonResponse({'message':'status changed!'})
