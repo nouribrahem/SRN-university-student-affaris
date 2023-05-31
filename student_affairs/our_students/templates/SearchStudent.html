@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="{% static 'styles/searchStyle.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/navStyle.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/view.css' %}">
+    </head>
+    <body>
+        <header class = "headofpage">
+            <a style= "padding: 10px;"; href="Home.html"><img src="{% static 'styles/pics/newlogo.png' %}" style="width: 300px; height: 90px;padding: 20px;"/> </a>
+            <!-- <hr> -->
+             
+            
+            <div class ="navBar">
+              <ul class ="navList">
+                <li class="home"><a href="Home.html">Home </a></li> 
+                
+                <div class = "dropdown">
+                  <li class="dropbtn">Students</li>
+                  <div class="dropdown-content">
+                      <a href="ViewStudents.html">View students</a>
+                      <a href="AddStudent.html"> Add student </a>
+                  </div>
+                </div>
+          
+                <li class ="s"><a href ="SearchStudent.html">Search</a></li>
+                <li class="logout"><a href="Login.html">  Log out</a></li>
+              </ul>
+            </div>
+              <!-- <hr> -->
+        </header>
+        
+        <div class="search" id="search">
+          <form method='GET'>
+          <input name="query"class="searchbar" id="searchbar"type="text" placeholder="Search..">
+          <button class= "submit" id="submit"type="submit"></button>
+          </form>
+        </div>
+        <div class="result" id="result"></div>
+
+        <table id="students">
+          {% if student %}
+          <thead>
+              <th id="name">Name</th>
+              <th id="id">Id</th>
+              <th id="status">Status</th>
+              <th id="lvl">Level</th>
+              <th id="dep">Department</th>
+              <th id="gpa">GPA</th>
+              <th id="actions">Actions</th>
+          </thead>
+          {%endif%}
+          {% for x in student %}     
+          <tr>
+             <td> {{ x.fname }} {{x.lname}}</td>
+             <td name="id">{{ x.id }}</td>
+             <td> {{ x.status}}</td>
+             <td>{{ x.level }}</td>
+              <td> {{ x.department }}</td>
+              <td>{{ x.gpa }}</td>     
+              <td>
+                <button class="status" id="status" onclick="window.location.href='/{{id}}/'">{{x.status}}</button>
+                <button class="update" id="update">Update</button>
+                <button class="dep" id="assign">Assign Department</button>
+              </td>
+          </tr>
+        {% endfor %}
+         </table>
+
+        <!-- <script src="Scripts\searchScript.js"></script> -->
+    </body>
+</html>

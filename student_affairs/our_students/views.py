@@ -6,6 +6,8 @@ from django.template import loader
 from django.views.decorators.csrf import csrf_protect
 from .models import students
 from django.http import JsonResponse
+from django.shortcuts import render
+from django.db.models import Q
 import json
 from django.views.decorators.csrf import csrf_exempt
 
@@ -154,5 +156,24 @@ def update_student(request, id):
         }
     return HttpResponse(template.render(context, request))
     
+def search(request):
+    query_dict = request.GET
+    query = query_dict.get("query")
+    student = None
+    print(query)
+    if query is not None:
+        # if query.isnumeric():
+        #     student = students.objects.filter(id=query)
+        # elif query.isalpha():
+        student = students.objects.filter(Q(fname=query)|Q(lname=query)|Q(id=query))
+            # student = students.objects.filter(lname=query)
+    print(student)
+    context={"student":student}
+    return render(request,"SearchStudent.html", context=context)
 
+# def status_change(request,id): 
+#     query_dict = request.GET
+#     query = query_dict.get("query")
+#     student = students.objects.get(id=id)
+#     status = students.objects.update(status=F('')) 
 
