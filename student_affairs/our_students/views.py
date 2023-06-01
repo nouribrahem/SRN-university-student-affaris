@@ -9,6 +9,7 @@ from django.shortcuts import render
 from django.db.models import Q
 import json
 from django.views.decorators.csrf import csrf_exempt
+from datetime import datetime
 
 @csrf_exempt
 # def index(request):
@@ -152,12 +153,17 @@ def update_student(request, id):
         student.dob = dob
         student.gender = gender
         student.save()
-    
+        
+
     template = loader.get_template('UpdateStudent.html')
     stud = students.objects.get(id=id)
+    str_dob = str(stud.dob)
+
     context = {
             'our_students': stud,
+            'formatted_dob': str_dob,
         }
+    # messages.success(request, 'Student updated successfully!')
     return HttpResponse(template.render(context, request))
     
 def search(request):
