@@ -20,7 +20,7 @@ def index(request):
     template = loader.get_template('Home.html')
     return HttpResponse(template.render())
 
-def exit(request):
+def start(request):
     template = loader.get_template('NewHomePage.html')
     return HttpResponse(template.render())
 
@@ -199,5 +199,7 @@ def delete_student(request):
         print(student_id)
         student = students.objects.get(id=student_id)
         student.delete()
+        messages.info(request,'Student was deleted successfully!')
+
     return redirect('/our_students/vieww/')
     

@@ -2,7 +2,7 @@ from django.urls import path
 from . import views 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('exit/',views.exit),
+    path('exit/',views.start),
     path('vieww/', views.vieww, name='vieww'),
     path('assign_dep/<str:id>/',views.assign_dep),
     path('update_status/<str:id>/',views.status_change),
