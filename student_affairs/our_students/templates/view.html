@@ -32,7 +32,8 @@
             <td> {{ x.department }}</td>
             <td>{{ x.gpa }}</td>     
             <td>
-              <button class="status" type="submit" onclick=changeStatus()>{{x.status}}</button>
+              {% csrf_token %}
+              <button class="status" type="submit" onclick="changeStatus()">{{x.status}}</button>
               <button class="update" type="submit" onclick="update()">Update</button><br>
               <button class="dep" type="submit" onclick="department()">Assign Department</button>
             </td>

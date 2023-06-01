@@ -10,7 +10,7 @@ from django.db.models import Q
 import json
 from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
-
+import string
 @csrf_exempt
 # def index(request):
 #     return HttpResponse("Hello, world. You're at the students index.")
@@ -33,7 +33,7 @@ def add_studentfun(request):
         ID = request.POST.get('ID')
         email = request.POST.get('email')
         GPA = request.POST.get('GPA')
-        phone_number = request.POST.get('phone_number')
+        phone_number = request.POST.get('phone number')
         level = request.POST.get('level')
         DOB = request.POST.get('DOB')
         department = request.POST.get('department')
@@ -170,25 +170,28 @@ def update_student(request, id):
 def search(request):
     query_dict = request.GET
     query = query_dict.get("query")
+    
     student = None
-    print(query)
+    # print(query)
     if query is not None:
-        student = students.objects.filter(Q(fname=query)|Q(lname=query)|Q(id=query))
+        queryLow = query.lower()
+        queryUp = query.capitalize()
+        student = students.objects.filter((Q(fname=queryLow)|Q(lname=queryLow)|Q(id=query)|Q(fname=queryUp)|Q(lname=queryUp))& Q(status='Active'))
         if not student:
             messages.info(request, 'No Students matched your search!')
-    print(student)
+    # print(student)
     
 
     context={"student":student}
     return render(request,"SearchStudent.html", context=context)
 
-@csrf_exempt
+
 def status_change(request,id): 
     if request.method == 'POST':
         dict = json.loads(request.body)
         student = students.objects.get(id=id)
-        student.status = dict.get(dict['status'])
-        print(dict)
+        student.status = dict.get('status')
+        print(student.status)
         student.save()
         return JsonResponse({'message':'status changed!'})
     return JsonResponse({'message':'Invalid request'})
@@ -199,7 +202,7 @@ def delete_student(request):
         print(student_id)
         student = students.objects.get(id=student_id)
         student.delete()
-        messages.info(request,'Student was deleted successfully!')
+        # messages.info(request,'Student was deleted successfully!')
 
     return redirect('/our_students/vieww/')
     

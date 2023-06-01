@@ -1,6 +1,6 @@
 var b = document.querySelector('.status');
 function handleForm(event) { event.preventDefault(); }  
-button.addEventListener('submit',handleForm);
+b.addEventListener('submit',handleForm);
 function updateStatusInStorage(id, status) {
     var xhttp = new XMLHttpRequest();
     var csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
@@ -14,25 +14,26 @@ function updateStatusInStorage(id, status) {
         }
     };
     var dict = {'id':id, 'status':status};
-    console.log(dict);
+    // console.log(dict);
     xhttp.send(JSON.stringify(dict));
 }
 function changeStatus() {
     var row = event.target.parentNode; // get the row element
     row = row.parentNode;
-    console.log(row);
+    // console.log(row);
     var idCell = row.cells[1];
-    console.log(idCell);
+    // console.log(idCell);
     var statusCell = row.cells[2]; // get the cell containing the status
-    var status = statusCell.innerHTML; // get the current status
-
-    if (status === "Active") {
+    // var status = statusCell.innerHTML; // get the current status
+    console.log("before",statusCell.innerHTML);
+    if (statusCell.innerHTML.includes("Active")) {
         statusCell.innerHTML = "Inactive"; // change the status
+        
     } else {
         statusCell.innerHTML = "Active"; // change the status back
     }
-    console.log(statusCell.innerHTML);
-    // updateStatusInStorage(idCell.innerHTML, statusCell.innerHTML);
+    event.target.innerHTML = statusCell.innerHTML;
+    console.log("after",statusCell.innerHTML);
     updateStatusInStorage(idCell.innerHTML,statusCell.innerHTML);
 }
 function update() {
