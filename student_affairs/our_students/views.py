@@ -174,7 +174,11 @@ def search(request):
     print(query)
     if query is not None:
         student = students.objects.filter(Q(fname=query)|Q(lname=query)|Q(id=query))
+        if not student:
+            messages.info(request, 'No Students matched your search!')
     print(student)
+    
+
     context={"student":student}
     return render(request,"SearchStudent.html", context=context)
 
