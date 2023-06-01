@@ -153,6 +153,8 @@ def update_student(request, id):
         student.dob = dob
         student.gender = gender
         student.save()
+        messages.success(request, 'Student updated successfully!')
+
         
 
     template = loader.get_template('UpdateStudent.html')
@@ -163,7 +165,6 @@ def update_student(request, id):
             'our_students': stud,
             'formatted_dob': str_dob,
         }
-    # messages.success(request, 'Student updated successfully!')
     return HttpResponse(template.render(context, request))
     
 def search(request):
