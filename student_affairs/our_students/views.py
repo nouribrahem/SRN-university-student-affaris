@@ -1,4 +1,3 @@
-from django.shortcuts import render 
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import HttpResponse
@@ -137,13 +136,13 @@ def update_student(request, id):
         lname = request.POST['lname']
         
         email = request.POST['email']
-        GPA = request.POST['gpa']
-        phone_number = request.POST['phone']
+        GPA = request.POST['GPA']
+        phone_number = request.POST['phone_no']
         level = request.POST['level']
-        dob = request.POST['dob']
-        gender = request.POST['gender']
+        dob = request.POST['DOB']
+        gender = request.POST.get('gender')
         student = students.objects.get(id = id)
-        
+        print(GPA)
         student.fname =fname
         student.lname =lname
         student.email=email
@@ -182,4 +181,12 @@ def status_change(request,id):
         student.save()
         return JsonResponse({'message':'status changed!'})
     return JsonResponse({'message':'Invalid request'})
+    
+def delete_student(request):
+    if request.method == 'POST':
+        student_id = request.POST.get('ID')
+        print(student_id)
+        student = students.objects.get(id=student_id)
+        student.delete()
+    return redirect('/our_students/vieww/')
     

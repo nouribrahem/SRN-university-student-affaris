@@ -23,7 +23,7 @@
 
       <!--ID  and Email-->
       <label for="ID" style="left: -36px;">ID:</label> <label for="email" style="left: 20px;">Email:</label><br><br>
-      <input type="text" id="ID" name="ID" minlength="8" class="txtboxStyle2" placeholder="20XXXXXX" disabled value="{{our_students.id}}">&emsp;
+      <input type="text" id="ID" name="ID" minlength="8" class="txtboxStyle2" placeholder="20XXXXXX" readonly value="{{our_students.id}}">&emsp;
       <input type="email" id="email" name="email" class="txtboxStyle2" placeholder="Example@gmail.com" value="{{our_students.email}}"><br><br>
 
       <!--GPA and Phone number -->
@@ -77,8 +77,8 @@
 
       <!--Submit and delete buttons-->
       <div class="btnStyle">
-        <input type="submit" value="Update">&emsp;
-        <input type="button" value="Delete" class="delete-button"><br><br><br>
+        <input type="submit" value="Update" >&emsp;
+        <input type="submit" value="Delete" class="delete-button" formaction = "/our_students/update_student/delete/"><br><br><br>
       </div>
 
 
