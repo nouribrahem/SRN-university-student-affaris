@@ -12,7 +12,6 @@
 <body>
   {%block content%}
   <div class="Whole">
-    <br><br>
     
       {% for message in messages %}
         <div id="message_id"> {{message}}</div>
@@ -95,14 +94,12 @@
       <!--Submit and delete buttons-->
       <div class="btnStyle">
         <input type="submit" value="Update">&emsp;
-        <input type="submit" value="Delete" class="delete-button"
-          formaction="/our_students/update_student/delete/"><br><br><br>
+        <input type="submit" value="Delete" class="delete-button" onclick="confirmDelete()"
+          formaction="/our_students/update_student/delete/" ><br><br><br>
       </div>
-
-
-
     </form>
-  
+    <script src="{% static 'scripts\updateStudent.js' %}"></script>
+
 
   </div>
   {%endblock%}
