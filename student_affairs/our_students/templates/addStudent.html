@@ -11,6 +11,11 @@
     {% block content%}
       <div class="Whole">
       <br /><br />
+      
+      {% for message in messages %}
+        <div id="message_id"> {{message}}</div>
+      {% endfor %}
+
       <h1 id="AddStudent" style="text-align: center">Add Student</h1>
       <br /><br /><br /><br />
       <form method="post">

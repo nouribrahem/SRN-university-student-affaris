@@ -52,9 +52,11 @@ def add_studentfun(request):
             department=department ,
             gender=gender,
             status=status
-    )
+        )
         print(student)
         student.save()
+        messages.success(request, 'Student added successfully!')
+
     template = loader.get_template('addStudent.html')
     context = {
         'message': 'Update successful',
@@ -154,8 +156,6 @@ def update_student(request, id):
         student.gender = gender
         student.save()
         messages.success(request, 'Student updated successfully!')
-
-        
 
     template = loader.get_template('UpdateStudent.html')
     stud = students.objects.get(id=id)
