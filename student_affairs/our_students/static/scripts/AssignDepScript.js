@@ -3,22 +3,15 @@ function handleForm(event) { event.preventDefault(); }
 form.addEventListener('submit', handleForm);
 
 function updateDep() {
-    
-
     var id = document.getElementById('id').value;
     var level = document.getElementById('level').value;
     console.log(level);
     var newDep = document.getElementById("department").value;
     console.log(newDep);
-    if (level < 3) {
-        var message = document.getElementById('message');
-        message.innerHTML = 'Level should be at least 3';
-        message.style.display = 'block';
-        message.style.color = 'white';
-        message.style.border =  '2px solid red';
-        message.style.borderRadius = '10px';
-        message.style.background = 'rgba(128, 0, 0, 0.5)'; 
-        message.style.padding  = '20px';  
+    if (level < 3 ) {
+        messageText = 'Level should be at least 3';
+        bg_color = 'rgba(120,0, 0, 0.5)'
+        showMessage(messageText, 'red',bg_color);
         return;
     }
     else {
@@ -29,16 +22,10 @@ function updateDep() {
         xhttp.setRequestHeader('X-CSRFToken', csrfToken);
         xhttp.onreadystatechange = function () {
             if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
-                var message = document.getElementById('message');
                 response = JSON.parse(xhttp.responseText);
-                message.innerHTML = response.message;
-                message.style.display = 'block';
-                message.style.color = 'white';
-                message.style.border = '2px solid green';
-                message.style.borderRadius = '10px';
-                message.style.background = 'rgba(0, 120, 0, 0.5)'; 
-                message.style.padding  = '20px';  
-                message.scrollIntoView({ behavior: 'smooth' });
+                messageText = response.message;
+                bg_color = 'rgba(0, 120, 0, 0.5)'
+                showMessage(messageText, 'green',bg_color);
             }
         };
 
@@ -49,10 +36,22 @@ function updateDep() {
 
         xhttp.send(JSON.stringify(data));
     }
- 
-
-
 }
 
+function showMessage(messageText, color, bg_color) {
+    var message = document.getElementById('message');
+    message.innerHTML = messageText;
+    message.style.display = 'block';
+    message.style.color = 'white';
+    message.style.border = '2px solid ' + color;
+    message.style.borderRadius = '10px';
+    message.style.background = bg_color;
+    message.style.padding = '20px';
+    message.style.animation = 'fadeOut 6s forwards';
 
+    setTimeout(function () {
+        message.style.display = 'none';
+        message.style.animation = '';
+    }, 6000);
+}
 

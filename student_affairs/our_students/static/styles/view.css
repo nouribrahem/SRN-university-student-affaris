@@ -30,7 +30,7 @@ table, th, td {
     margin-top:5%px;
   }
   
-  button#status, button#assign,button#update {
+  .status, .dep, .update {
     background-color:#022851;
     margin: 10px 20px;
     padding: 10px 20px;
@@ -42,6 +42,6 @@ table, th, td {
     border-radius: 5px;
   }
   
-  button#status:hover, button#assign:hover,button#update:hover {
+  button.status:hover, button.update:hover,button.dep:hover {
     background-color: #0856a9;
   }

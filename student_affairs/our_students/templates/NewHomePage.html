@@ -1,16 +1,17 @@
 <!DOCTYPE html>
+{%load static %}
 <html lang="en">
 <head>
-    <link rel = "stylesheet" href  = "Styles\NewHomePage.css">
+    <link rel = "stylesheet" href  = "{% static 'styles\NewHomePage.css'%}">
     <title>Home Page</title>
 </head>
 <body>
-    <img src="Pictures/newlogo.png"/> 
+    <img src="{% static 'styles/pics/newlogo.png' %}"/> 
 
     <div class="button-container">
     
         <button> Human Resources Website</button> <br> 
-        <a href = "Home.html"> <button> Student Affairs Website </button></a> <br>
+        <a href = "/our_students/"> <button> Student Affairs Website </button></a> <br>
         <button> Higher Studies Website</button> <br>
         <button> Laboratory Tracking Website</button> <br>
     </div>
