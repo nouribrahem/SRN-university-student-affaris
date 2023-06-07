@@ -1,6 +1,6 @@
 .Whole {
     width:750px;
-    height: 850px;
+    height: 800px;
     position: relative;
     border: 2px solid #022851;
     border-radius: 10px;
@@ -9,25 +9,6 @@
     margin: 40px auto;
     position: relative;
     background-color: white;
-}
-@keyframes fadeOut {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  
-#message_id {
-    display :block;
-    color:white;
-    border : 2px solid #022851;
-    border-radius: 10px;
-    background : #022851;
-    padding :20px;
-    margin-top: 10px;
-    animation : fadeOut 6s forwards;
 }
 #Update_student {
     position: relative;
@@ -155,5 +136,3 @@ form {
 input:disabled:hover {
     cursor: not-allowed;
   }
-
-

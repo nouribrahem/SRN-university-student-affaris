@@ -60,7 +60,8 @@ input {
 }
 
 form {
-  display: flex;
+    /* text-align: center; */
+    display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -105,9 +106,4 @@ input:disabled:hover {
   input:focus {
     border: 1.5px solid rgb(255, 191, 0);
     outline: none;
-}
-
-#message {
-  position: fixed;
-  display : none;
 }

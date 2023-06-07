@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SRN-Login</title>
+	
+	<link rel="stylesheet" type="text/css" href="Styles/LoginStyle.css">
+  
+</head>
+
+<body>
+	<div id = "whole" >
+		<a ><img src="Pictures/newlogo.png"></a>
+		<div id = "LoginForm">
+			<h1 id = "login_header" > Welcome!</h1>
+			<form action = "NewHomePage.html" onsubmit="return checkLogin()" method="GET">
+				<label for="username" >Username</label><br>
+				<input type="text" id="username" placeholder="Enter your username" required><br><br>
+				<label for="password" >Password</label><br>
+				<input type="password" id="password" placeholder="Enter your password" required><br><br>
+				<label for="remember" class="remember">Remember Me</label>
+				<input type="checkbox" id="remember" name="remember"><br>
+				<button type="submit">Login</button> 
+			</form>
+		</div>
+		
+	</div>
+	<script type="text/javascript" src="Scripts/Login.js"></script>
+</body>
+</html>

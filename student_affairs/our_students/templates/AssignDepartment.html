@@ -1,21 +1,40 @@
-{% extends "home.html" %}
-{%load static%}
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    {%block title%}
     <title>Departments-SRN</title>
-    {%endblock%}
-
-    {%block links%}
     <link rel="stylesheet" href="{% static 'styles/AssignDepartment.css' %}">
-    {%endblock%}
+    <link rel="stylesheet" href="{% static 'styles/navStyle.css' %}">
 
 </head>
 
 <body>
-   {%block content %}
+    <header class="headofpage">
+        <a style="padding: 10px;" ; href="Home.html"><img src="{% static 'styles/pics/newlogo.png'%}"
+                style="width: 300px; height: 90px;padding: 20px;" /> </a>
+        <!-- <hr> -->
+
+
+        <div class="navBar">
+            <ul class="navList">
+                <li class="home"><a href="Home.html">Home </a></li>
+
+                <div class="dropdown">
+                    <li class="dropbtn">Students</li>
+                    <div class="dropdown-content">
+                        <a href="ViewStudents.html">View students</a>
+                        <a href="AddStudent.html"> Add student </a>
+                    </div>
+                </div>
+
+                <li class="s"><a href="SearchStudent.html">Search</a></li>
+                <li class="logout"><a href="Login.html"> Log out</a></li>
+            </ul>
+        </div>
+        <!-- <hr> -->
+    </header>
+
     <div id="Whole">
 
         <form method="POST" id = "dep_form" >
@@ -67,7 +86,8 @@
         <br><br>
         <div id="message"></div> 
     </div>
-    {% endblock %}
+
+
 </body>
 
 </html>

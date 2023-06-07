@@ -1,52 +1,61 @@
-{% extends "home.html" %}
-{%load static%}
 <!DOCTYPE html>
 <html>
-
+{%load static%}
 <head>
-  {%block links%}
+  <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="{% static 'styles\UpdateStrudentStyle.css' %}">
-  {% endblock %}
+  <link rel="stylesheet" href="{% static 'styles\navStyle.css' %}">
 </head>
 
 <body>
-  {%block content%}
+  <header class="headofpage">
+    <a style="padding: 10px;" ; href="Home.html"><img src="{% static 'Styles\pics\newlogo.png'%} " alt = "backgroud"
+        style="width: 300px; height: 90px;padding: 20px;" /> </a>
+    <!-- <hr> -->
+    <div class="navBar">
+      <ul class="navList">
+        <li class="home"><a href="Home.html">Home </a></li>
+
+        <div class="dropdown">
+          <li class="dropbtn">Students</li>
+          <div class="dropdown-content">
+            <a href="ViewStudents.html">View students</a>
+            <a href="AddStudent.html"> Add student </a>
+          </div>
+        </div>
+
+        <li class="s"><a href="SearchStudent.html">Search</a></li>
+        <li class="logout"><a href="Login.html"> Log out</a></li>
+      </ul>
+    </div>
+    <!-- <hr> -->
+  </header>
   <div class="Whole">
-    
-      {% for message in messages %}
-        <div id="message_id"> {{message}}</div>
-      {% endfor %}
-    
+    <br><br>
     <h1 id="Update_student" style="text-align: center;">Update student information</h1><br><br><br><br>
-    <form id="form" method="POST">
-      {% csrf_token %}
+    <form id="form" method="POST" >
+    {% csrf_token %}
       <!--First name AND last name-->
       <label for="fname" style="left: 7px;">First name:</label><label for="lname" style="left: 9px;">Last name:</label>
       <br><br>
-      <input type="text" id="fname" name="fname" class="txtboxStyle1" placeholder="First name"
-        value="{{our_students.fname}}">&emsp;
-      <input type="text" id="lname" name="lname" class="txtboxStyle1" placeholder="Last name"
-        value="{{our_students.lname}}"><br><br>
+      <input type="text" id="fname" name="fname" class="txtboxStyle1" placeholder="First name" value="{{our_students.fname}}">&emsp;
+      <input  type="text" id="lname" name="lname" class="txtboxStyle1" placeholder="Last name" value="{{our_students.lname}}"><br><br>
 
       <!--ID  and Email-->
       <label for="ID" style="left: -36px;">ID:</label> <label for="email" style="left: 20px;">Email:</label><br><br>
-      <input type="text" id="ID" name="ID" minlength="8" class="txtboxStyle2" placeholder="20XXXXXX" readonly
-        value="{{our_students.id}}">&emsp;
-      <input type="email" id="email" name="email" class="txtboxStyle2" placeholder="Example@gmail.com"
-        value="{{our_students.email}}"><br><br>
+      <input type="text" id="ID" name="ID" minlength="8" class="txtboxStyle2" placeholder="20XXXXXX" disabled value="{{our_students.id}}">&emsp;
+      <input type="email" id="email" name="email" class="txtboxStyle2" placeholder="Example@gmail.com" value="{{our_students.email}}"><br><br>
 
       <!--GPA and Phone number -->
       <label for="GPA" style="left: 2px;">GPA:</label><label for="phone_no" style="left:45px;">Mobile
         Number:</label><br><br>
-      <input type="number" min="0" max="4" step="0.1" id="GPA" name="GPA" class="txtboxStyle2" placeholder="GPA"
-        value="{{our_students.gpa}}">&emsp;
+      <input type="number" min = "0" max = "4" step = "0.1" id="GPA" name="GPA" class="txtboxStyle2" placeholder="GPA" value="{{our_students.gpa}}">&emsp;
       <input type="tel" id="phone_no" name="phone_no" minlength="11" class="txtboxStyle2" placeholder="01XX XXX XXXX"
-        value="{{our_students.phone}}"><br><br>
+        value=""><br><br>
 
       <!--Level-->
       <label for="level">Level: </label> <label for="DOB" style="left:30px">Date of birth:</label><br><br>
-      <input type=text name="level" list="level" id="level" class="txtboxStyle2" placeholder="Choose your level"
-        value="{{our_students.level}}">
+      <input type=text name = "level"list="level" id="level" class="txtboxStyle2" placeholder="Choose your level" value="{{our_students.level}}">
       <datalist id="level">
         <option> 1
         <option> 2
@@ -56,8 +65,8 @@
 
       <!--Date of birth-->
 
-      <input type="date"  id="DOB" name="DOB" class="txtboxStyle2" placeholder="Date of birth" min="1999-01-01"
-        max="2004-12-31" style="right:5px; height:34px" value="{{formatted_dob}}"><br><br>
+      <input type="date" id="DOB" name="DOB" class="txtboxStyle2" placeholder="Date of birth" min="1999-01-01" max="2004-12-31"
+        style="right:5px; height:34px" value=""><br><br>
 
       <!--Deparment-->
       <label for="dep" style="left:-155px">Deparment: </label> <br><br>
@@ -78,31 +87,27 @@
       <!--Gender-->
       <label for="g" style="left: -165px;">Gender: </label><br><br><br>
       &emsp;&emsp;
-      {%if our_students.gender == 'Male'%}
-        <input type="radio" id="male" name="gender" value="Male" class="radio" checked>
-        <label for="gender" class="male">Male</label>&emsp;&emsp;
-        <input type="radio" id="female" name="gender" value="Female">
-        <label for="gender" class="female">Female</label>
-        <br><br><br><br>
-      {%else %}
-        <input type="radio" id="male" name="gender" value="Male" class="radio" >
-        <label for="gender" class="male">Male</label>&emsp;&emsp;
-        <input type="radio" id="female" name="gender" value="Female" checked>
-        <label for="gender" class="female">Female</label>
-        <br><br><br><br>
-      {%endif%}
+      <input type="radio" id="male" name="gender" value="Male" class="radio" 
+      
+      >
+      <label for="gender" class="male">Male</label>&emsp;&emsp;
+      <input type="radio" id="female" name="gender" value="Female">
+      <label for="gender" class="female">Female</label>
+      <br><br><br><br>
+
       <!--Submit and delete buttons-->
       <div class="btnStyle">
         <input type="submit" value="Update">&emsp;
-        <input type="submit" value="Delete" class="delete-button" onclick="confirmDelete()"
-          formaction="/our_students/update_student/delete/" ><br><br><br>
+        <input type="button" value="Delete" class="delete-button"><br><br><br>
       </div>
+
+
+
     </form>
-    <script src="{% static 'scripts\updateStudent.js' %}"></script>
-
-
   </div>
-  {%endblock%}
+  <script src="Scripts\updateStudent.js"></script>
+
 </body>
 
 </html>
+
