@@ -26,6 +26,8 @@ def add_studentfun(request):
         department = request.POST['department']
         gender = request.POST['gender']
         status = request.POST['status']
+        if(level <= 2):
+            department = 'General'
         
         student = students(
             first_name=fname,
